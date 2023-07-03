@@ -28,28 +28,6 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   description: "Frontend developer based in Poland.",
-  icons: {
-    apple: "/assets/images/favicons/apple-touch-icon.png",
-    icon: [
-      {
-        sizes: "16x16",
-        type: "image/png",
-        url: "/assets/images/favicons/favicon-16x16.png",
-      },
-      {
-        sizes: "32x32",
-        type: "image/png",
-        url: "/assets/images/favicons/favicon-32x32.png",
-      },
-    ],
-    other: [
-      {
-        rel: "manifest",
-        url: "/assets/images/favicons/site.webmanifest",
-      },
-    ],
-    shortcut: "/assets/images/favicons/favicon.ico",
-  },
   openGraph: {
     locale: "en-US",
     siteName: "Mateusz Aliyev",
