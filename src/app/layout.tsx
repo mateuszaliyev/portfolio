@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
-  description: "Software engineer passionate about frontend development.",
+  description: "Frontend developer based in Poland.",
   icons: {
     apple: "/assets/images/favicons/apple-touch-icon.png",
     icon: [
