@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   },
   themeColor: "#000000",
   title,
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 const jost = Jost({

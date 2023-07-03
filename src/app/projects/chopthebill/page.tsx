@@ -7,8 +7,16 @@ import { environment } from "@/environment.mjs";
 
 import Content from "./content.mdx";
 
+const description = "Cost sharing made easy.";
+const title = "ChopTheBill";
+
 export const metadata: Metadata = {
-  title: "ChopTheBill",
+  description,
+  openGraph: {
+    description,
+    title,
+  },
+  title,
 };
 
 const ChopTheBillPage = () => (
