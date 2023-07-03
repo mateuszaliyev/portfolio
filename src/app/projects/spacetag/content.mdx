@@ -1,0 +1,105 @@
+import spacetagApplication from "@/assets/images/spacetag/application.png";
+import spacetagHomePage from "@/assets/images/spacetag/homepage.png";
+
+import { Image } from "@/components/image";
+import { TechnologyIcon } from "@/components/technology/icon";
+import { TechnologyList } from "@/components/technology/list";
+
+SpaceTag is an award-winning 3D satellite tracking web application focusing on
+simplicity and ease of use, featuring an extensive list of satellites to choose
+from and manage through the user-friendly control center.
+
+<Image alt="SpaceTag's homepage." src={spacetagHomePage} />
+
+## Features
+
+- List of over {new Intl.NumberFormat("en").format(8000)} satellites
+- Custom objects via
+  [Two-Line Element](https://en.wikipedia.org/wiki/Two-line_element_set) format
+- Past, present and future satellite positions on a chosen date and at a chosen
+  time
+- Support for gestures on touch devices
+- Refresh-proof, persistent settings
+- Satellite orbit trajectories
+
+<Image alt="SpaceTag's application." src={spacetagApplication} />
+
+## My role
+
+I was part of
+[500 International Space Station](https://2022.spaceappschallenge.org/challenges/2022-challenges/track-the-iss/teams/500-international-space-station)
+— a team of four [Rzeszów University of Technology](https://w.prz.edu.pl/en)
+Computer Engineering majors and
+[Student Research Group of Computer Science - ‘Code’](https://kod.prz.edu.pl/)
+members, who developed this project during
+[2022 NASA International Space Apps Challenge](https://2022.spaceappschallenge.org/)
+hackathon. It was my first time taking part in a competition of this kind.
+
+Since my teammates specialised in backend development and the application was
+frontend-oriented, I had many responsibilities regarding the technical side of
+the project:
+
+- Initialising the project
+- Making architectural and technological decisions
+- Building user interfaces
+- Setting up global state management
+- Implementing application's internal logic
+- Deploying the application
+
+The success of the project by far exceeded our expectations. Our team took third
+place and multiple awards, including a trip to [SES](https://ses.com/) (one of
+the world's leading satellite owners and operators) headquarters in Betzdorf,
+Luxembourg.
+
+We saw the opportunity for our junior colleagues to learn a lot by contributing
+to this project and decided to continue the development of the project under
+[Student Research Group of Computer Science - ‘Code’](https://kod.prz.edu.pl/).
+I was appointed as a new project leader as other teammates took on other
+projects. As a project leader I inherited several new duties:
+
+- Making the code more modular and extensible
+- Optimising the application in terms of performance
+- Designing the logo
+- Planning and holding regular team meetings
+- Overseeing project progress
+- Assigning tasks
+- Conducting code reviews
+- Peer mentoring
+
+## Technologies
+
+<TechnologyList>
+  <TechnologyIcon
+    href="https://headlessui.com/"
+    logo="headless-ui"
+    name="Headless UI"
+  />
+  <TechnologyIcon href="https://nextjs.org/" logo="next-js" name="Next.js" />
+  <TechnologyIcon href="https://nodejs.org/" logo="node-js" name="Node.js" />
+  <TechnologyIcon href="https://pnpm.io/" logo="pnpm" name="pnpm" />
+  <TechnologyIcon href="https://react.dev/" logo="react" name="React" />
+  <TechnologyIcon
+    href="https://tailwindcss.com/"
+    logo="tailwindcss"
+    name="Tailwind CSS"
+  />
+  <TechnologyIcon
+    href="https://tanstack.com/query"
+    logo="tanstack-query"
+    name="TanStack Query"
+  />
+  <TechnologyIcon href="https://threejs.org/" logo="three-js" name="Three.js" />
+  <TechnologyIcon href="https://trpc.io/" logo="trpc" name="tRPC" />
+  <TechnologyIcon
+    href="https://typescriptlang.org/"
+    logo="typescript"
+    name="TypeScript"
+  />
+  <TechnologyIcon href="https://vercel.com/" logo="vercel" name="Vercel" />
+  <TechnologyIcon href="https://zod.dev/" logo="zod" name="Zod" />
+  <TechnologyIcon
+    href="https://zustand-demo.pmnd.rs/"
+    logo="zustand"
+    name="Zustand"
+  />
+</TechnologyList>

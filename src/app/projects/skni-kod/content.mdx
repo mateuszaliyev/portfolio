@@ -1,0 +1,93 @@
+import skniKodArticle from "@/assets/images/skni-kod/article.png";
+import skniKodHomePage from "@/assets/images/skni-kod/homepage.png";
+
+import { Image } from "@/components/image";
+import { TechnologyIcon } from "@/components/technology/icon";
+import { TechnologyList } from "@/components/technology/list";
+
+This project is a complete rewrite of
+[Student Research Group of Computer Science — ‘Code’](https://skni.prz.edu.pl/)
+website, featuring [OAuth 2.0](https://oauth.net/2/) authentication and a blog
+with content management capabilities.
+
+<Image alt="SKNI Kod's homepage view." src={skniKodHomePage} />
+
+## Features
+
+<div className="[mask-image:linear-gradient(#000_57%,#00000080_57%,#00000000)]">
+
+- Authentication through
+  [GitHub's OAuth Apps](https://docs.github.com/en/apps/oauth-apps)
+- Blog with [MDX](https://mdxjs.com/) content
+- Content management
+- Dark, light and system themes
+- Projects
+- User management
+- Hardware management
+
+</div>
+
+This project is still work in progress. More coming soon...
+
+<Image alt="SKNI Kod's article view." src={skniKodArticle} />
+
+## My role
+
+The old SKNI Kod website built with [Vue.js 2](https://v2.vuejs.org/) and
+[Django](https://djangoproject.com/) frameworks was created by the more
+experienced members of the group. As they graduated, the project gradually began
+to receive fewer updates until it was eventually no longer maintained.
+
+Since I had to create a web application for my BSc thesis — ‘Use of
+[Next.js](https://nextjs.org/) Framework for Server-Side Application
+Development’ — I decided to seize an opportunity and build a new website for
+SKNI Kod using modern technologies.
+
+Official brand assets and list of requirements the website should meet were
+provided by group's management. I implemented the most crucial features such as
+authentication and content management first, while working on my thesis.
+Features that were out of scope of the thesis are currently a work in progress.
+
+## Technologies
+
+<TechnologyList>
+  <TechnologyIcon
+    href="https://cva.style/"
+    logo="class-variance-authority"
+    name="Class Variance Authority"
+  />
+  <TechnologyIcon
+    href="https://headlessui.com/"
+    logo="headless-ui"
+    name="Headless UI"
+  />
+  <TechnologyIcon href="https://mdxjs.com/" logo="mdx" name="MDX" />
+  <TechnologyIcon href="https://mysql.com/" logo="mysql" name="MySQL" />
+  <TechnologyIcon href="https://nextjs.org/" logo="next-js" name="Next.js" />
+  <TechnologyIcon href="https://react.dev/" logo="react" name="React" />
+  <TechnologyIcon
+    href="https://planetscale.com/"
+    logo="planetscale"
+    name="PlanetScale"
+  />
+  <TechnologyIcon href="https://prisma.io/" logo="prisma" name="Prisma" />
+  <TechnologyIcon href="https://sass-lang.com/" logo="sass" name="Sass" />
+  <TechnologyIcon
+    href="https://tailwindcss.com/"
+    logo="tailwindcss"
+    name="Tailwind CSS"
+  />
+  <TechnologyIcon
+    href="https://tanstack.com/query"
+    logo="tanstack-query"
+    name="TanStack Query"
+  />
+  <TechnologyIcon href="https://trpc.io/" logo="trpc" name="tRPC" />
+  <TechnologyIcon
+    href="https://typescriptlang.org/"
+    logo="typescript"
+    name="TypeScript"
+  />
+  <TechnologyIcon href="https://vercel.com/" logo="vercel" name="Vercel" />
+  <TechnologyIcon href="https://zod.dev/" logo="zod" name="Zod" />
+</TechnologyList>

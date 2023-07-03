@@ -1,0 +1,134 @@
+import chopTheBillAccount from "@/assets/images/chopthebill/account.png";
+import chopTheBillExpenses from "@/assets/images/chopthebill/expenses.png";
+import chopTheBillNewExpense from "@/assets/images/chopthebill/expenses-new.png";
+import chopTheBillFriends from "@/assets/images/chopthebill/friends.png";
+import chopTheBillGroup from "@/assets/images/chopthebill/group.png";
+import chopTheBillHomePage from "@/assets/images/chopthebill/homepage.png";
+import chopTheBillObligations from "@/assets/images/chopthebill/obligations.png";
+
+import { Image } from "@/components/image";
+import { TechnologyIcon } from "@/components/technology/icon";
+import { TechnologyList } from "@/components/technology/list";
+
+ChopTheBill is a progressive web application designed to make sharing expenses a
+breeze. Adding friends, joining groups, creating expenses and settling
+obligations is just a few clicks away.
+
+<div className="not-prose grid grid-cols-2 gap-4 sm:grid-cols-3">
+  <Image
+    alt="ChopTheBill's homepage."
+    className="col-span-full rounded shadow-lg"
+    src={chopTheBillHomePage}
+  />
+  <Image
+    alt="ChopTheBill's account mobile view."
+    className="rounded shadow-lg"
+    src={chopTheBillAccount}
+  />
+  <Image
+    alt="ChopTheBill's friends mobile view."
+    className="hidden rounded shadow-lg sm:block"
+    src={chopTheBillFriends}
+  />
+  <Image
+    alt="ChopTheBill's group mobile view."
+    className="rounded shadow-lg"
+    src={chopTheBillGroup}
+  />
+</div>
+
+## Features
+
+- Friends
+- Groups
+- Notifications
+- Summary of pending and settled obligations
+- Multiple currencies support (EUR, GBP, JPY, PLN and USD by default)
+- Internationalization (English and Polish by default)
+- Dark and light themes
+- Vibrant and toned down color palettes
+- Progressive Web App
+
+<Image alt="ChopTheBill's expenses view." src={chopTheBillExpenses} />
+
+## My role
+
+ChopTheBill was one of many student projects made as a result of close
+collaboration between
+[The Faculty of Electrical and Computer Engineering](https://weii.prz.edu.pl/en/)
+and [The Faculty of Management](https://wz.prz.edu.pl/en/). Due to my prior
+experience in creating web applications I was appointed as a project leader of a
+team of seven developers, meaning I had many duties, including:
+
+- Communicating with product owner and product manager
+- Planning and holding regular team meetings
+- Overseeing project progress
+- Representing the team in front of lecturers
+- Assigning tasks
+- Initialising the project
+- Making architectural and technological decisions
+- Conducting code reviews
+- Peer mentoring
+- Designing a logo
+- Implementing home page and the expense module
+- Deploying the application
+- Giving a presentation on the results of our work
+
+Despite extensive requirements our team managed to reach the objectives within
+about two months of work and the project was considered a success.
+
+<Image alt="ChopTheBill's new expense view." src={chopTheBillNewExpense} />
+
+## Technologies
+
+### Frontend
+
+<TechnologyList>
+  <TechnologyIcon
+    href="https://date-fns.org/"
+    logo="date-fns"
+    name="date-fns"
+  />
+  <TechnologyIcon logo="javascript" name="JavaScript" />
+  <TechnologyIcon href="https://lodash.com/" logo="lodash" name="Lodash" />
+  <TechnologyIcon href="https://mui.com/" logo="mui" name="MUI" />
+  <TechnologyIcon href="https://nextjs.org/" logo="next-js" name="Next.js" />
+  <TechnologyIcon
+    href="https://i18next.com/"
+    logo="i18next"
+    name="next-i18next"
+  />
+  <TechnologyIcon href="https://npmjs.com/" logo="npm" name="npm" />
+  <TechnologyIcon href="https://react.dev/" logo="react" name="React" />
+  <TechnologyIcon
+    href="https://web.dev/progressive-web-apps"
+    logo="progressive-web-apps"
+    name="Progressive Web Apps"
+  />
+  <TechnologyIcon href="https://vercel.com/" logo="vercel" name="Vercel" />
+</TechnologyList>
+
+### Backend
+
+<TechnologyList>
+  <TechnologyIcon
+    href="https://github.com/motdotla/dotenv"
+    logo="dotenv"
+    name="Dotenv"
+  />
+  <TechnologyIcon href="https://expressjs.com/" logo="express" name="Express" />
+  <TechnologyIcon href="https://heroku.com/" logo="heroku" name="Heroku" />
+  <TechnologyIcon logo="javascript" name="JavaScript" />
+  <TechnologyIcon href="https://jestjs.io/" logo="jest" name="Jest" />
+  <TechnologyIcon href="https://jwt.io/" logo="jwt" name="JSON Web Tokens" />
+  <TechnologyIcon href="https://nodejs.org/" logo="node-js" name="Node.js" />
+  <TechnologyIcon href="https://npmjs.com/" logo="npm" name="npm" />
+  <TechnologyIcon href="https://nodemon.io/" logo="nodemon" name="nodemon" />
+  <TechnologyIcon
+    href="https://postgresql.org/"
+    logo="postgresql"
+    name="PostgreSQL"
+  />
+</TechnologyList>
+
+<Image alt="ChopTheBill's obligations view." src={chopTheBillObligations} />
