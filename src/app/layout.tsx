@@ -27,29 +27,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
-  description: "Software engineer passionate about frontend development.",
-  icons: {
-    apple: "/assets/images/favicons/apple-touch-icon.png",
-    icon: [
-      {
-        sizes: "16x16",
-        type: "image/png",
-        url: "/assets/images/favicons/favicon-16x16.png",
-      },
-      {
-        sizes: "32x32",
-        type: "image/png",
-        url: "/assets/images/favicons/favicon-32x32.png",
-      },
-    ],
-    other: [
-      {
-        rel: "manifest",
-        url: "/assets/images/favicons/site.webmanifest",
-      },
-    ],
-    shortcut: "/assets/images/favicons/favicon.ico",
-  },
+  description: "Frontend developer based in Poland.",
   openGraph: {
     locale: "en-US",
     siteName: "Mateusz Aliyev",
@@ -57,8 +35,35 @@ export const metadata: Metadata = {
     type: "website",
     url: BASE_URL,
   },
+  robots: {
+    follow: false,
+    googleBot: {
+      follow: false,
+      index: false,
+      indexifembedded: false,
+      "max-image-preview": "none",
+      noarchive: true,
+      nocache: true,
+      noimageindex: true,
+      nositelinkssearchbox: true,
+      nosnippet: true,
+      notranslate: true,
+    },
+    index: false,
+    indexifembedded: false,
+    "max-image-preview": "none",
+    noarchive: true,
+    nocache: true,
+    noimageindex: true,
+    nositelinkssearchbox: true,
+    nosnippet: true,
+    notranslate: true,
+  },
   themeColor: "#000000",
   title,
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 const jost = Jost({

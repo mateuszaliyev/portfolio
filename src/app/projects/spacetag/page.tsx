@@ -7,8 +7,16 @@ import { environment } from "@/environment.mjs";
 
 import Content from "./content.mdx";
 
+const description = "3D satellite tracking tool.";
+const title = "SpaceTag";
+
 export const metadata: Metadata = {
-  title: "SpaceTag",
+  description,
+  openGraph: {
+    description,
+    title,
+  },
+  title,
 };
 
 const SpaceTagPage = () => (

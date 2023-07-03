@@ -7,8 +7,17 @@ import { environment } from "@/environment.mjs";
 
 import Content from "./content.mdx";
 
+const description =
+  "Student Research Group of Computer Science &mdash; ‘Code’ website.";
+const title = "SKNI Kod";
+
 export const metadata: Metadata = {
-  title: "SKNI Kod",
+  description,
+  openGraph: {
+    description,
+    title,
+  },
+  title,
 };
 
 const SkniKodPage = () => (

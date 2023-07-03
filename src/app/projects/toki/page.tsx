@@ -7,8 +7,16 @@ import { environment } from "@/environment.mjs";
 
 import Content from "./content.mdx";
 
+const description = "Minimalist count up timer.";
+const title = "Toki";
+
 export const metadata: Metadata = {
-  title: "Toki",
+  description,
+  openGraph: {
+    description,
+    title,
+  },
+  title,
 };
 
 const TokiPage = () => (

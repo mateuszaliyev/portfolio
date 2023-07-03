@@ -7,8 +7,16 @@ import { environment } from "@/environment.mjs";
 
 import Content from "./content.mdx";
 
+const description = "My personal portfolio.";
+const title = "Portfolio";
+
 export const metadata: Metadata = {
-  title: "Portfolio",
+  description,
+  openGraph: {
+    description,
+    title,
+  },
+  title,
 };
 
 const PortfolioPage = () => (
