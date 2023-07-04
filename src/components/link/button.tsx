@@ -32,7 +32,7 @@ export const LinkButton = <Route,>({
   <Link className={linkButton({ className, variant })} {...props}>
     <div
       className={cx(
-        "relative mx-4 my-2 flex items-center justify-center bg-gradient-to-b from-cyan-400 via-sky-500 to-blue-600 bg-clip-text text-xl font-medium text-transparent transition group-hover:text-white group-focus-visible:text-white",
+        "relative flex items-center justify-center bg-gradient-to-b from-cyan-400 via-sky-500 to-blue-600 bg-clip-text px-4 py-2 font-medium text-transparent transition group-hover:text-white group-focus-visible:text-white",
         className
       )}
     >
