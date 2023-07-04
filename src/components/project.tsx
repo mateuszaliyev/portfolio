@@ -26,7 +26,7 @@ export const Project = <RepositoryRoute, WebsiteRoute>({
         aria-hidden
         className="absolute inset-0 flex items-center justify-center pb-36"
       >
-        <Logo className="h-64 w-64 text-gray-300 md:h-96 md:w-96" />
+        <Logo className="h-48 w-48 text-gray-300 sm:h-64 sm:w-64 md:h-96 md:w-96" />
       </div>
       <Container
         className="absolute inset-0 flex grow items-end justify-start gap-4 pb-20"

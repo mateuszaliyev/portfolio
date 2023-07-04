@@ -1,4 +1,4 @@
-import { type ForwardedRef, forwardRef } from "react";
+import { forwardRef, type Ref } from "react";
 
 import {
   default as NextLink,
@@ -11,7 +11,9 @@ declare module "react" {
   ): (props: Props & RefAttributes<T>) => ReactElement | null;
 }
 
-export type LinkProps<Route> = NextLinkProps<Route>;
+export type LinkProps<Route> = Omit<NextLinkProps<Route>, "ref"> & {
+  ref?: Ref<HTMLAnchorElement>;
+};
 
 const noReferrerRel = <Route,>(
   href: LinkProps<Route>["href"],
@@ -26,16 +28,10 @@ const noReferrerRel = <Route,>(
 };
 
 const LinkWithForwardedRef = <Route,>(
-  { href, rel, ...props }: LinkProps<Route>,
-  ref: ForwardedRef<HTMLAnchorElement>
+  { href, rel, ...props }: Omit<LinkProps<Route>, "ref">,
+  ref: Ref<HTMLAnchorElement>
 ) => (
-  <NextLink
-    href={href}
-    // @ts-expect-error Property `ref` does not exist on type (https://github.com/vercel/next.js/issues/51907)
-    ref={ref}
-    rel={noReferrerRel(href, rel)}
-    {...props}
-  />
+  <NextLink href={href} ref={ref} rel={noReferrerRel(href, rel)} {...props} />
 );
 
 export const Link = forwardRef(LinkWithForwardedRef);
