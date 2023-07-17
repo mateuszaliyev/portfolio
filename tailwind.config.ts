@@ -1,10 +1,10 @@
 import headlessUiPlugin from "@headlessui/tailwindcss";
 import tailwindCssTypographyPlugin from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
+import tailwindCssAnimatePlugin from "tailwindcss-animate";
 import { slate as gray, white } from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
-import tailwindCssAnimatePlugin from "tailwindcss-animate";
 
 const tailwindCssConfig: Config = {
   content: ["./src/**/*.{mdx,ts,tsx}"],
@@ -30,9 +30,9 @@ const tailwindCssConfig: Config = {
         {
           type: "number",
           values: Object.fromEntries(
-            Array.from({ length: 12 }, (_, index) => [`${index}`, `${index}`])
+            Array.from({ length: 12 }, (_, index) => [`${index}`, `${index}`]),
           ),
-        }
+        },
       );
       matchUtilities(
         {
@@ -45,7 +45,7 @@ const tailwindCssConfig: Config = {
         {
           supportsNegativeValues: true,
           values: theme("translate"),
-        }
+        },
       );
     }),
   ],
@@ -97,6 +97,10 @@ const tailwindCssConfig: Config = {
             top: "0%",
           },
         },
+      },
+      screens: {
+        "2xs": "360px",
+        xs: "480px",
       },
     },
     zIndex: {

@@ -24,7 +24,7 @@ const Image = async () =>
         <path d="M12 2.248 5.616 21.753 1.61 9.535 12 17.115l10.389-7.58-4.005 12.218z" />
       </svg>
     </OpenGraphImage>,
-    size
+    size,
   );
 
 export default Image;

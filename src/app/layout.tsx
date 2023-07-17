@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
 
 import { cx } from "cva";
 
@@ -11,8 +10,9 @@ import { Header } from "@/components/header";
 import { Parallax } from "@/components/parallax";
 
 import { BASE_URL } from "@/constants/environment";
+import { jost } from "@/constants/fonts";
 
-import "@/styles/global.css";
+import "./style.css";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -65,11 +65,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
 };
-
-const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-jost",
-});
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html className={cx("scroll-smooth", jost.variable)} lang="en">

@@ -11,7 +11,7 @@ export const TechnologyList = ({
   <ul
     className={cx(
       "not-prose flex list-none flex-wrap gap-3 md:gap-4",
-      className
+      className,
     )}
     {...props}
   />

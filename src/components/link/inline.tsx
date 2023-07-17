@@ -17,7 +17,7 @@ export const LinkInline = <Route,>({
   <Link
     className={cx(
       "bg-gradient-to-b from-cyan-400 via-sky-500 to-blue-600 bg-clip-text text-transparent outline-none transition hover:brightness-125 focus-visible:brightness-125",
-      className
+      className,
     )}
     href={href}
     {...props}

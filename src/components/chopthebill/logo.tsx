@@ -1,4 +1,4 @@
-import { type SVGAttributes, useId } from "react";
+import { useId, type SVGAttributes } from "react";
 
 export type ChopTheBillLogoProps = Omit<
   SVGAttributes<SVGSVGElement>,

@@ -4,7 +4,7 @@ import { LinkInline } from "@/components/link/inline";
 import { environment } from "@/environment.mjs";
 
 export const Contact = () => (
-  <section className="bg-white py-40">
+  <section className="py-40">
     <Container className="flex flex-col items-center justify-between gap-10 lg:flex-row">
       <h2 className="text-center text-3xl text-gray-400 sm:text-4xl lg:text-start">
         Want to work together?
