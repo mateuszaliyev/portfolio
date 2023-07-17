@@ -6,7 +6,7 @@ export type ChopTheBillLogomarkBackgroundProps = Omit<
 >;
 
 export const ChopTheBillLogomarkBackground = (
-  props: ChopTheBillLogomarkBackgroundProps
+  props: ChopTheBillLogomarkBackgroundProps,
 ) => (
   <svg
     viewBox="0 0 40.217 40.217"

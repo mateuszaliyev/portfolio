@@ -4,8 +4,6 @@ import { Balancer } from "@/components/balancer";
 import { Container } from "@/components/container";
 import { Image } from "@/components/image";
 
-import { Skills } from "./skills";
-
 export const About = () => (
   <section className="relative bg-gradient-section py-20" id="about">
     <Container size="large">
@@ -39,7 +37,6 @@ export const About = () => (
         aria-hidden
         className="hidden h-1 w-full rounded-b-full bg-gradient-to-r from-gray-800 from-[320px] via-gray-400 to-gray-200 md:block"
       />
-      <Skills />
     </Container>
   </section>
 );

@@ -23,7 +23,7 @@ const badge = cva(
         small: "text-xs",
       },
     },
-  }
+  },
 );
 
 export const Badge = ({ className, color, ...props }: BadgeProps) => (

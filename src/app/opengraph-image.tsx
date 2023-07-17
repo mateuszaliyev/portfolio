@@ -31,7 +31,7 @@ const Image = async () =>
         </div>
       }
     />,
-    size
+    size,
   );
 
 export default Image;

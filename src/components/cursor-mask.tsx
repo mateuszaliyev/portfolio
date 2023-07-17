@@ -1,6 +1,6 @@
 "use client";
 
-import { type HTMLAttributes, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type HTMLAttributes } from "react";
 
 import { cx } from "cva";
 
@@ -32,7 +32,7 @@ export const CursorMask = ({
         return;
 
       setMaskPosition(
-        `${clientX - left - 0.5 * width}px ${clientY - top - 0.5 * height}px`
+        `${clientX - left - 0.5 * width}px ${clientY - top - 0.5 * height}px`,
       );
     };
 
@@ -44,7 +44,7 @@ export const CursorMask = ({
     <span
       className={cx(
         "[mask-image:radial-gradient(circle_at_center,#000_40%,transparent_50%)] [mask-repeat:no-repeat]",
-        className
+        className,
       )}
       onMouseLeave={(event) => {
         setMaskPosition(maskPositionDefaultValue);

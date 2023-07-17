@@ -42,8 +42,8 @@ const WorkProject = <Route,>({
     <li className={className}>
       <Link
         className={cx(
-          "gradient-to-b flex w-full flex-col rounded-md border border-gray-200 from-white to-gray-50 to-65% p-6 shadow-inner outline-none transition md:min-h-[14rem]",
-          linkClassName
+          "flex w-full flex-col rounded-md border border-gray-200 bg-gradient-to-b from-white to-gray-50 to-65% p-6 shadow-inner outline-none transition md:min-h-[14rem]",
+          linkClassName,
         )}
         href={href}
         target={external ? "_blank" : undefined}
@@ -65,7 +65,7 @@ const WorkProject = <Route,>({
 };
 
 export const Work = () => (
-  <section className="bg-white py-20" id="work">
+  <section className="py-20" id="work">
     <Container>
       <Headline className="text-center">Recent work</Headline>
       <ul className="flex flex-col flex-wrap justify-center gap-4 pt-20 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">

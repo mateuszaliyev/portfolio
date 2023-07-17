@@ -1,9 +1,9 @@
 "use client";
 
 import {
+  forwardRef,
   type ComponentPropsWithoutRef,
   type ElementRef,
-  forwardRef,
 } from "react";
 
 import { Content, Provider, Root } from "@radix-ui/react-tooltip";
@@ -29,7 +29,7 @@ export const TooltipContent = forwardRef<
   <Content
     className={cx(
       "z-tooltip overflow-hidden rounded-md border bg-white px-3 py-1.5 text-sm text-gray-900 shadow-md animate-in fade-in-50 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1",
-      className
+      className,
     )}
     ref={ref}
     sideOffset={sideOffset}
@@ -38,23 +38,11 @@ export const TooltipContent = forwardRef<
 ));
 
 export const Tooltip = ({
-  children,
-  defaultOpen,
-  delayDuration,
-  disableHoverableContent,
-  onOpenChange,
-  open,
+  delayDuration = 300,
   skipDelayDuration,
+  ...props
 }: TooltipProps) => (
   <Provider skipDelayDuration={skipDelayDuration}>
-    <Root
-      defaultOpen={defaultOpen}
-      delayDuration={delayDuration}
-      disableHoverableContent={disableHoverableContent}
-      onOpenChange={onOpenChange}
-      open={open}
-    >
-      {children}
-    </Root>
+    <Root delayDuration={delayDuration} {...props} />
   </Provider>
 );

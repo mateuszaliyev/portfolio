@@ -9,5 +9,5 @@ export const LogoPath = forwardRef<SVGPathElement, LogoPathProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );

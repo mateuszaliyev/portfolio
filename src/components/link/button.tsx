@@ -1,5 +1,4 @@
-import type { VariantProps } from "cva";
-import { cva, cx } from "cva";
+import { cva, cx, type VariantProps } from "cva";
 
 import { Link, type LinkProps } from "./link";
 
@@ -20,7 +19,7 @@ const linkButton = cva(
           "bg-clip-text text-transparent transition hover:brightness-125 focus-visible:brightness-125",
       },
     },
-  }
+  },
 );
 
 export const LinkButton = <Route,>({
@@ -33,7 +32,7 @@ export const LinkButton = <Route,>({
     <div
       className={cx(
         "relative flex items-center justify-center bg-gradient-to-b from-cyan-400 via-sky-500 to-blue-600 bg-clip-text px-4 py-2 font-medium text-transparent transition group-hover:text-white group-focus-visible:text-white",
-        className
+        className,
       )}
     >
       {children}

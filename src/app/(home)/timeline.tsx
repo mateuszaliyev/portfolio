@@ -29,7 +29,7 @@ const TimelineContent = ({
   <p
     className={cx(
       "max-w-prose pb-2 text-lg text-gray-500 sm:text-xl md:text-2xl",
-      className
+      className,
     )}
     {...props}
   >
@@ -53,7 +53,7 @@ const TimelineEntry = <Route,>({
           "w-px grow",
           fadeLine
             ? "bg-gradient-to-b from-gray-300 to-transparent"
-            : "bg-gray-300"
+            : "bg-gray-300",
         )}
       />
     </div>
@@ -88,7 +88,7 @@ const TimelineEntry = <Route,>({
 );
 
 export const Timeline = () => (
-  <section className="flex flex-col gap-16 bg-white">
+  <section className="flex flex-col gap-16">
     <Container>
       <Headline className="text-center">Timeline</Headline>
       <ul className="mx-auto w-full max-w-screen-md">
@@ -182,11 +182,7 @@ export const Timeline = () => (
             and frequent contributor to group&apos;s open-source web projects.
           </TimelineContent>
           <TechnologyList>
-            <TechnologyIcon
-              href="https://cva.style/"
-              logo="class-variance-authority"
-              name="Class Variance Authority"
-            />
+            <TechnologyIcon href="https://cva.style/" logo="cva" name="cva" />
             <TechnologyIcon
               href="https://headlessui.com/"
               logo="headless-ui"

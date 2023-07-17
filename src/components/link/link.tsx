@@ -7,7 +7,7 @@ import {
 
 declare module "react" {
   function forwardRef<T, Props = {}>(
-    render: (props: Props, ref: Ref<T>) => ReactElement | null
+    render: (props: Props, ref: Ref<T>) => ReactElement | null,
   ): (props: Props & RefAttributes<T>) => ReactElement | null;
 }
 
@@ -17,7 +17,7 @@ export type LinkProps<Route> = Omit<NextLinkProps<Route>, "ref"> & {
 
 const noReferrerRel = <Route,>(
   href: LinkProps<Route>["href"],
-  rel: LinkProps<Route>["rel"]
+  rel: LinkProps<Route>["rel"],
 ) => {
   if (typeof href === "string" && (href[0] === "/" || href[0] === "#")) {
     return rel;
@@ -29,7 +29,7 @@ const noReferrerRel = <Route,>(
 
 const LinkWithForwardedRef = <Route,>(
   { href, rel, ...props }: Omit<LinkProps<Route>, "ref">,
-  ref: Ref<HTMLAnchorElement>
+  ref: Ref<HTMLAnchorElement>,
 ) => (
   <NextLink href={href} ref={ref} rel={noReferrerRel(href, rel)} {...props} />
 );

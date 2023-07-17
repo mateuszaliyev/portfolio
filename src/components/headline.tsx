@@ -16,8 +16,8 @@ export const Headline = ({
 }: HeadlineProps) => (
   <Component
     className={cx(
-      "relative z-heading mb-8 mt-14 text-3xl font-normal !leading-loose text-gray-400 before:absolute before:inset-y-0 before:left-[calc(-50vw+50%)] before:z-[-1] before:w-screen before:bg-gray-100 sm:text-4xl md:mb-10 md:mt-[4.5rem] md:text-5xl",
-      className
+      "relative z-heading mb-8 mt-14 py-3 text-3xl font-normal text-gray-400 before:absolute before:inset-y-0 before:left-[calc(-50vw+50%)] before:z-[-1] before:w-screen before:bg-gray-100 sm:py-4 sm:text-4xl md:mb-10 md:mt-[4.5rem] md:py-6 md:text-5xl",
+      className,
     )}
     {...props}
   />

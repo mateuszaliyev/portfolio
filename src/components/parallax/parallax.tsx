@@ -1,6 +1,6 @@
 "use client";
 
-import { type HTMLAttributes, useEffect, useRef } from "react";
+import { useEffect, useRef, type HTMLAttributes } from "react";
 
 import { usePathname } from "next/navigation";
 
@@ -21,7 +21,7 @@ export const Parallax = ({ className, ...props }: ParallaxProps) => {
     <div
       className={cx(
         "relative flex h-screen grow flex-col overflow-x-hidden [perspective:1px]",
-        className
+        className,
       )}
       ref={ref}
       {...props}

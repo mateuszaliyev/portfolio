@@ -5,7 +5,7 @@ export const createImageResponse = async (
   size: Pick<
     NonNullable<ConstructorParameters<typeof ImageResponse>[1]>,
     "height" | "width"
-  >
+  >,
 ) =>
   new ImageResponse(element, {
     ...size,
@@ -19,7 +19,7 @@ export const createImageResponse = async (
 
 export const getImageResponseFont = async () => {
   const response = await fetch(
-    new URL("../assets/fonts/jost-regular.ttf", import.meta.url)
+    new URL("../assets/fonts/jost-regular.ttf", import.meta.url),
   );
   return await response.arrayBuffer();
 };

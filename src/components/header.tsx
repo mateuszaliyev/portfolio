@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, type HTMLAttributes, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, type HTMLAttributes } from "react";
 
 import { Dialog, Transition } from "@headlessui/react";
 import { cx } from "cva";
@@ -72,7 +72,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           viewportHeight < scrollTop
             ? "border-opacity-100 bg-opacity-80 backdrop-blur-sm backdrop-saturate-[1.8]"
             : "border-opacity-0 bg-opacity-0",
-          className
+          className,
         )}
         {...props}
       >
@@ -158,7 +158,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                         className={cx(
                           "relative inline-flex items-center outline-none",
                           index === 0 && "text-white",
-                          url.startsWith("https") && "translate-x-[0.25em]"
+                          url.startsWith("https") && "translate-x-[0.25em]",
                         )}
                         href={url}
                         onClick={() => setOpen(false)}
