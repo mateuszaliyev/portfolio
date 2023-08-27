@@ -21,7 +21,8 @@ export const TechnologyIcon = ({
   <Tooltip>
     <TooltipContent>{name}</TooltipContent>
     <TooltipTrigger asChild>
-      <li className={cx("h-6 w-6 md:h-8 md:w-8", className)} {...props}>
+      <li className={cx("h-6 w-6", className)} {...props}>
+        {/* eslint-disable @next/next/no-img-element */}
         {href ? (
           <Link className="outline-none" href={href} target="_blank">
             <img
@@ -39,6 +40,7 @@ export const TechnologyIcon = ({
             src={`/assets/images/logo/${logo}.svg`}
           />
         )}
+        {/* eslint-enable @next/next/no-img-element */}
       </li>
     </TooltipTrigger>
   </Tooltip>

@@ -9,7 +9,7 @@ declare module "tailwindcss/lib/util/flattenColorPalette" {
 
   const flattenColorPalette: (
     colorPalette: RecursiveKeyValuePair,
-  ) => KeyValuePair<string, string>;
+  ) => KeyValuePair;
 
   export default flattenColorPalette;
 }

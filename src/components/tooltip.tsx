@@ -46,3 +46,5 @@ export const Tooltip = ({
     <Root delayDuration={delayDuration} {...props} />
   </Provider>
 );
+
+TooltipContent.displayName = "TooltipContent";

@@ -2,8 +2,7 @@ import { cva, cx, type VariantProps } from "cva";
 
 import { Link, type LinkProps } from "./link";
 
-export type LinkButtonProps<Route> = LinkProps<Route> &
-  VariantProps<typeof linkButton>;
+export type LinkButtonProps = LinkProps & VariantProps<typeof linkButton>;
 
 const linkButton = cva(
   "inline-flex bg-gradient-to-b from-cyan-400 via-sky-500 to-blue-600 outline-none",
@@ -22,12 +21,12 @@ const linkButton = cva(
   },
 );
 
-export const LinkButton = <Route,>({
+export const LinkButton = ({
   children,
   className,
   variant,
   ...props
-}: LinkButtonProps<Route>) => (
+}: LinkButtonProps) => (
   <Link className={linkButton({ className, variant })} {...props}>
     <div
       className={cx(

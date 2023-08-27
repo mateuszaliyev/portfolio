@@ -9,7 +9,7 @@ import { Link, type LinkProps } from "@/components/link";
 export type ProjectProps = {
   className?: string;
   description: string;
-  href: LinkProps<unknown>["href"];
+  href: LinkProps["href"];
   logo: ReactNode;
   name: string;
 };

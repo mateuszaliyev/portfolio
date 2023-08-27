@@ -5,7 +5,7 @@ import { Contact } from "./contact";
 import { Hero } from "./hero";
 import { Technologies } from "./technologies";
 import { Timeline } from "./timeline";
-import { Work } from "./work";
+import { SelectedWork } from "./work";
 
 const HomePage = () => (
   <>
@@ -14,7 +14,7 @@ const HomePage = () => (
       <About />
       <Technologies font={jost.style.fontFamily.split("'")[1]} />
       <Timeline />
-      <Work />
+      <SelectedWork />
       <Contact />
     </main>
   </>

@@ -14,7 +14,7 @@ export const environment = createEnv({
       .url()
       .startsWith("https://linkedin.com/")
       .transform(
-        (url) => /** @type {`https://linkedin.com/${string}`} */ (url)
+        (url) => /** @type {`https://linkedin.com/${string}`} */ (url),
       ),
   },
   runtimeEnv: {
