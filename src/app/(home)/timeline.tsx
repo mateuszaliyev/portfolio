@@ -11,12 +11,12 @@ import { LinkInline } from "@/components/link/inline";
 import { TechnologyIcon } from "@/components/technology/icon";
 import { TechnologyList } from "@/components/technology/list";
 
-type TimelineEntryProps<Route> = {
+type TimelineEntryProps = {
   children: ReactNode;
   date: string;
   fadeLine?: boolean;
   title: {
-    href?: LinkProps<Route>["href"];
+    href?: LinkProps["href"];
     text: string;
   };
 };
@@ -37,12 +37,12 @@ const TimelineContent = ({
   </p>
 );
 
-const TimelineEntry = <Route,>({
+const TimelineEntry = ({
   children,
   date,
   fadeLine,
   title,
-}: TimelineEntryProps<Route>) => (
+}: TimelineEntryProps) => (
   <li className="relative flex gap-6 lg:gap-8">
     <div aria-hidden className="flex flex-col items-center">
       <div className="flex h-8 w-full items-center justify-center sm:h-9 md:h-10">
@@ -92,6 +92,84 @@ export const Timeline = () => (
     <Container>
       <Headline className="text-center">Timeline</Headline>
       <ul className="mx-auto w-full max-w-screen-md">
+        <TimelineEntry
+          date="2023–now"
+          title={{
+            text: "Wenanty Group",
+          }}
+        >
+          <TimelineContent>
+            Frontend Developer responsible for design, architectural decisions
+            and development of both internal and external client full-stack
+            applications.
+          </TimelineContent>
+          <TechnologyList>
+            <TechnologyIcon href="https://cva.style/" logo="cva" name="cva" />
+            <TechnologyIcon
+              href="https://headlessui.com/"
+              logo="headless-ui"
+              name="Headless UI"
+            />
+            <TechnologyIcon
+              href="https://nextjs.org/"
+              logo="next-js"
+              name="Next.js"
+            />
+            <TechnologyIcon
+              href="https://nodejs.org/"
+              logo="node-js"
+              name="Node.js"
+            />
+            <TechnologyIcon
+              href="https://planetscale.com/"
+              logo="planetscale"
+              name="PlanetScale"
+            />
+            <TechnologyIcon href="https://pnpm.io/" logo="pnpm" name="pnpm" />
+            <TechnologyIcon
+              href="https://radix-ui.com/"
+              logo="radix-ui"
+              name="Radix UI"
+            />
+            <TechnologyIcon
+              href="https://react.dev/"
+              logo="react"
+              name="React"
+            />
+            <TechnologyIcon
+              href="https://tailwindcss.com/"
+              logo="tailwindcss"
+              name="Tailwind CSS"
+            />
+            <TechnologyIcon
+              href="https://tanstack.com/query"
+              logo="tanstack-query"
+              name="TanStack Query"
+            />
+            <TechnologyIcon
+              href="https://tiptap.dev/"
+              logo="tiptap"
+              name="Tiptap"
+            />
+            <TechnologyIcon href="https://trpc.io/" logo="trpc" name="tRPC" />
+            <TechnologyIcon
+              href="https://typescriptlang.org/"
+              logo="typescript"
+              name="TypeScript"
+            />
+            <TechnologyIcon
+              href="https://vercel.com/"
+              logo="vercel"
+              name="Vercel"
+            />
+            <TechnologyIcon href="https://zod.dev/" logo="zod" name="Zod" />
+            <TechnologyIcon
+              href="https://zustand-demo.pmnd.rs/"
+              logo="zustand"
+              name="Zustand"
+            />
+          </TechnologyList>
+        </TimelineEntry>
         <TimelineEntry
           date="2022"
           title={{

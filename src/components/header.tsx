@@ -32,7 +32,7 @@ const NAVIGATION_LINKS = [
   },
 ] satisfies {
   name: string;
-  url: LinkProps<unknown>["href"];
+  url: LinkProps["href"];
 }[];
 
 export const Header = ({ className, ...props }: HeaderProps) => {
@@ -49,19 +49,27 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 
     if (!scrollable) return;
 
-    const handleScroll = () => setScrollTop(scrollable.scrollTop);
+    const handleScroll = () => {
+      setScrollTop(scrollable.scrollTop);
+    };
 
     scrollable.addEventListener("scroll", handleScroll);
 
-    return () => scrollable.removeEventListener("scroll", handleScroll);
+    return () => {
+      scrollable.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
-    const handleResize = () => setViewportHeight(window.innerHeight);
+    const handleResize = () => {
+      setViewportHeight(window.innerHeight);
+    };
 
     addEventListener("resize", handleResize);
 
-    return () => removeEventListener("resize", handleResize);
+    return () => {
+      removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -89,7 +97,9 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           </Link>
           <button
             className="pointer-events-auto flex w-12 cursor-pointer flex-col items-end justify-center gap-1 outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-sky-500"
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+            }}
           >
             <span className="sr-only">Open menu</span>
             <span className="block h-1 w-2/3 rounded-b-full bg-gradient-to-b from-cyan-400 to-sky-500" />
@@ -98,7 +108,12 @@ export const Header = ({ className, ...props }: HeaderProps) => {
         </Container>
       </header>
       <Transition as={Fragment} show={open}>
-        <Dialog className="fixed inset-0 z-menu" onClose={() => setOpen(false)}>
+        <Dialog
+          className="fixed inset-0 z-menu"
+          onClose={() => {
+            setOpen(false);
+          }}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-in"
@@ -129,7 +144,9 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                 <Logo className="h-full" stroke="#fff" />
                 <button
                   className="relative h-8 w-8 cursor-pointer gap-1 outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                  }}
                 >
                   <span className="sr-only">Close menu</span>
                   <span className="absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
@@ -161,9 +178,15 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                           url.startsWith("https") && "translate-x-[0.25em]",
                         )}
                         href={url}
-                        onClick={() => setOpen(false)}
-                        onFocus={() => setActive(index)}
-                        onMouseEnter={() => setActive(index)}
+                        onClick={() => {
+                          setOpen(false);
+                        }}
+                        onFocus={() => {
+                          setActive(index);
+                        }}
+                        onMouseEnter={() => {
+                          setActive(index);
+                        }}
                         target={url.startsWith("https") ? "_blank" : undefined}
                       >
                         {name}

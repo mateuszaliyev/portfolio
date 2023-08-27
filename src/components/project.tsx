@@ -5,21 +5,21 @@ import { GitHubIcon } from "@/components/icons/github";
 import { LinkButton, type LinkButtonProps } from "@/components/link/button";
 import { ParallaxLines } from "@/components/parallax-lines";
 
-export type ProjectProps<RepositoryRoute, WebsiteRoute> = {
+export type ProjectProps = {
   children: ReactNode;
   logo: (props: { className?: string }) => JSX.Element;
   name: string;
-  repository?: LinkButtonProps<RepositoryRoute>["href"];
-  website?: LinkButtonProps<WebsiteRoute>["href"];
+  repository?: LinkButtonProps["href"];
+  website?: LinkButtonProps["href"];
 };
 
-export const Project = <RepositoryRoute, WebsiteRoute>({
+export const Project = ({
   children,
   logo: Logo,
   name,
   repository,
   website,
-}: ProjectProps<RepositoryRoute, WebsiteRoute>) => (
+}: ProjectProps) => (
   <>
     <ParallaxLines className="relative z-[-1] flex min-h-screen scale-[2] flex-col bg-gray-100 -translate-z-px">
       <div
@@ -42,7 +42,7 @@ export const Project = <RepositoryRoute, WebsiteRoute>({
         {children}
       </Container>
     </section>
-    {(repository || website) && (
+    {(typeof repository !== "undefined" || typeof website !== "undefined") && (
       <section className="py-20">
         <Container className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           {website && (

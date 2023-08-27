@@ -11,3 +11,5 @@ export const LogoPath = forwardRef<SVGPathElement, LogoPathProps>(
     />
   ),
 );
+
+LogoPath.displayName = "LogoPath";

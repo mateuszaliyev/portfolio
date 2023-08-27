@@ -1,25 +1,27 @@
-const project = "./tsconfig.json";
-
 /** @type {import("eslint").Linter.Config} */
 const eslintConfig = {
-  extends: ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
-  overrides: [
-    {
-      extends: [
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-      ],
-      files: ["*.ts", "*.tsx"],
-      parserOptions: {
-        project,
-      },
-    },
+  extends: [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project,
+    project: true,
   },
   plugins: ["@typescript-eslint"],
   rules: {
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        extendDefaults: true,
+        types: {
+          "{}": false,
+        },
+      },
+    ],
+    "@typescript-eslint/consistent-type-definitions": ["off"],
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {
@@ -28,7 +30,10 @@ const eslintConfig = {
         prefer: "type-imports",
       },
     ],
-    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+    ],
   },
 };
 

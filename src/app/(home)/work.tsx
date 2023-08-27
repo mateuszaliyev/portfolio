@@ -17,17 +17,17 @@ import { TokiLogomark } from "@/components/toki/logomark";
 
 import { environment } from "@/environment.mjs";
 
-type WorkProjectProps<Route> = {
+type SelectedWorkProjectProps = {
   badge?: ReactNode;
   children: ReactNode;
   className?: string;
-  href: LinkProps<Route>["href"];
+  href: LinkProps["href"];
   linkClassName?: string;
   logo: ReactNode;
   title: string;
 };
 
-const WorkProject = <Route,>({
+const SelectedWorkProject = ({
   badge,
   children,
   className,
@@ -35,7 +35,7 @@ const WorkProject = <Route,>({
   linkClassName,
   logo,
   title,
-}: WorkProjectProps<Route>) => {
+}: SelectedWorkProjectProps) => {
   const external = typeof href === "string" && href.startsWith("https");
 
   return (
@@ -64,12 +64,12 @@ const WorkProject = <Route,>({
   );
 };
 
-export const Work = () => (
+export const SelectedWork = () => (
   <section className="py-20" id="work">
     <Container>
-      <Headline className="text-center">Recent work</Headline>
+      <Headline className="text-center">Selected work</Headline>
       <ul className="flex flex-col flex-wrap justify-center gap-4 pt-20 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-        <WorkProject
+        <SelectedWorkProject
           badge={<Badge color="emerald">New</Badge>}
           href="/projects/portfolio"
           linkClassName="hover:border-sky-500 focus-visible:border-sky-500"
@@ -82,16 +82,16 @@ export const Work = () => (
           title="mata.li"
         >
           My personal portfolio.
-        </WorkProject>
-        <WorkProject
+        </SelectedWorkProject>
+        <SelectedWorkProject
           href="/projects/toki"
           linkClassName="hover:border-gray-950 focus-visible:border-gray-950"
           logo={<TokiLogomark className="h-full w-full text-gray-950" />}
           title="Toki"
         >
           Minimalist count up timer.
-        </WorkProject>
-        <WorkProject
+        </SelectedWorkProject>
+        <SelectedWorkProject
           badge={<Badge color="blue">Work in Progress</Badge>}
           href="/projects/skni-kod"
           linkClassName="hover:border-sky-500 focus-visible:border-sky-500"
@@ -104,31 +104,31 @@ export const Work = () => (
           title="SKNI Kod"
         >
           Student Research Group of Computer Science &mdash; ‘Code’ website.
-        </WorkProject>
-        <WorkProject
+        </SelectedWorkProject>
+        <SelectedWorkProject
           href="/projects/spacetag"
           linkClassName="hover:border-black focus-visible:border-black"
           logo={<SpaceTagLogomark className="h-full w-full text-black" />}
           title="SpaceTag"
         >
           3D satellite tracking tool.
-        </WorkProject>
-        <WorkProject
+        </SelectedWorkProject>
+        <SelectedWorkProject
           href="/projects/chopthebill"
           linkClassName="hover:border-emerald-500 focus-visible:border-emerald-500"
           logo={<ChopTheBillLogomarkBackground className="h-full w-full" />}
           title="ChopTheBill"
         >
           Cost sharing made easy.
-        </WorkProject>
-        <WorkProject
+        </SelectedWorkProject>
+        <SelectedWorkProject
           href={`${environment.NEXT_PUBLIC_GITHUB_URL}?tab=repositories`}
           linkClassName="hover:border-gray-900 focus-visible:border-gray-900"
           logo={<GitHubIcon className="h-full w-full text-gray-900" />}
           title="More projects"
         >
           My GitHub repositories.
-        </WorkProject>
+        </SelectedWorkProject>
       </ul>
     </Container>
   </section>

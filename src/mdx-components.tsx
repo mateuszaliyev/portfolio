@@ -7,7 +7,7 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   a: (props) => (
     <LinkInline
       target={props.href?.startsWith("https://") ? "_blank" : undefined}
-      {...(props as LinkInlineProps<unknown>)}
+      {...(props as LinkInlineProps)}
     />
   ),
 });
