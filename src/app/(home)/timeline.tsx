@@ -11,6 +11,8 @@ import { LinkInline } from "@/components/link/inline";
 import { TechnologyIcon } from "@/components/technology/icon";
 import { TechnologyList } from "@/components/technology/list";
 
+import { isExternal } from "@/utilities/url";
+
 type TimelineEntryProps = {
   children: ReactNode;
   date: string;
@@ -65,8 +67,7 @@ const TimelineEntry = ({
               className="bg-gradient-to-b from-cyan-400 via-sky-500 to-blue-600 bg-clip-text text-current outline-none transition hover:text-transparent focus-visible:text-transparent"
               href={title.href}
               target={
-                typeof title.href === "string" &&
-                title.href.startsWith("https://")
+                typeof title.href === "string" && isExternal(title.href)
                   ? "_blank"
                   : undefined
               }
@@ -93,8 +94,9 @@ export const Timeline = () => (
       <Headline className="text-center">Timeline</Headline>
       <ul className="mx-auto w-full max-w-screen-md">
         <TimelineEntry
-          date="2023–now"
+          date="2023–present"
           title={{
+            href: "https://wenanty.group/",
             text: "Wenanty Group",
           }}
         >
@@ -245,7 +247,7 @@ export const Timeline = () => (
           </TechnologyList>
         </TimelineEntry>
         <TimelineEntry
-          date="2021–now"
+          date="2021–present"
           title={{
             href: "https://kod.prz.edu.pl/",
             text: "SKNI Kod",

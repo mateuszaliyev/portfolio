@@ -15,7 +15,7 @@ import { SkniKodLogomark } from "@/components/skni-kod/logomark";
 import { SpaceTagLogomark } from "@/components/spacetag/logomark";
 import { TokiLogomark } from "@/components/toki/logomark";
 
-import { environment } from "@/environment.mjs";
+import { isExternal } from "@/utilities/url";
 
 type SelectedWorkProjectProps = {
   badge?: ReactNode;
@@ -36,7 +36,7 @@ const SelectedWorkProject = ({
   logo,
   title,
 }: SelectedWorkProjectProps) => {
-  const external = typeof href === "string" && href.startsWith("https");
+  const external = typeof href === "string" && isExternal(href);
 
   return (
     <li className={className}>
@@ -122,7 +122,7 @@ export const SelectedWork = () => (
           Cost sharing made easy.
         </SelectedWorkProject>
         <SelectedWorkProject
-          href={`${environment.NEXT_PUBLIC_GITHUB_URL}?tab=repositories`}
+          href="/github?tab=repositories"
           linkClassName="hover:border-gray-900 focus-visible:border-gray-900"
           logo={<GitHubIcon className="h-full w-full text-gray-900" />}
           title="More projects"

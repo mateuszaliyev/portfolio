@@ -31,7 +31,7 @@ const TokiPage = () => (
   <Project
     logo={TokiLogomark}
     name="Toki"
-    repository={`${environment.NEXT_PUBLIC_GITHUB_URL}/toki`}
+    repository="/github/toki"
     website="https://toki.mata.li/"
   >
     <Content />

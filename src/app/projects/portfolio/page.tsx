@@ -34,7 +34,7 @@ const PortfolioPage = () => (
   <Project
     logo={Logo}
     name="mata.li"
-    repository={`${environment.NEXT_PUBLIC_GITHUB_URL}/portfolio`}
+    repository="/github/portfolio"
     website="https://mata.li/"
   >
     <Content />

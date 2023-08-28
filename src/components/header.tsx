@@ -11,9 +11,9 @@ import { Link, type LinkProps } from "@/components/link";
 import { LinkExternalIcon } from "@/components/link/external-icon";
 import { Logo } from "@/components/logo";
 
-import { environment } from "@/environment.mjs";
-
 import { useMediaQuery } from "@/hooks/media-query";
+
+import { isExternal } from "@/utilities/url";
 
 export type HeaderProps = Omit<HTMLAttributes<HTMLElement>, "children">;
 
@@ -24,11 +24,11 @@ const NAVIGATION_LINKS = [
   },
   {
     name: "GitHub",
-    url: environment.NEXT_PUBLIC_GITHUB_URL,
+    url: "/github",
   },
   {
     name: "LinkedIn",
-    url: environment.NEXT_PUBLIC_LINKEDIN_URL,
+    url: "/linkedin",
   },
 ] satisfies {
   name: string;
@@ -180,7 +180,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                         className={cx(
                           "relative inline-flex items-center outline-none",
                           index === 0 && "text-white",
-                          url.startsWith("https") && "translate-x-[0.25em]",
+                          isExternal(url) && "translate-x-[0.25em]",
                         )}
                         href={url}
                         onClick={() => {
@@ -192,10 +192,10 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                         onMouseEnter={() => {
                           setActive(index);
                         }}
-                        target={url.startsWith("https") ? "_blank" : undefined}
+                        target={isExternal(url) ? "_blank" : undefined}
                       >
                         {name}
-                        {url.startsWith("https") && <LinkExternalIcon />}
+                        {isExternal(url) && <LinkExternalIcon />}
                       </Link>
                     </li>
                   ))}

@@ -20,9 +20,9 @@ export const environment = createEnv({
     NEXT_PUBLIC_LINKEDIN_URL: z
       .string()
       .url()
-      .startsWith("https://linkedin.com/")
+      .startsWith("https://linkedin.com/in/")
       .transform(
-        (url) => /** @type {`https://linkedin.com/${string}`} */ (url),
+        (url) => /** @type {`https://linkedin.com/in/${string}`} */ (url),
       ),
   },
   runtimeEnv: {
