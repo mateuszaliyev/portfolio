@@ -32,7 +32,7 @@ const SkniKodPage = () => (
   <Project
     logo={SkniKodLogomark}
     name="SKNI Kod"
-    repository={`${environment.NEXT_PUBLIC_GITHUB_URL}/skni-kod`}
+    repository="/github/skni-kod"
     website="https://kod.mata.li/"
   >
     <Content />

@@ -12,9 +12,14 @@ const nextConfig = {
   /* eslint-disable-next-line @typescript-eslint/require-await */
   redirects: async () => [
     {
-      destination: environment.NEXT_PUBLIC_GITHUB_URL,
+      destination: `https://github.com/skni-kod/spacetag`,
       permanent: false,
-      source: "/github",
+      source: "/github/spacetag",
+    },
+    {
+      destination: `${environment.NEXT_PUBLIC_GITHUB_URL}/:path*`,
+      permanent: false,
+      source: "/github/:path*",
     },
     {
       destination: environment.NEXT_PUBLIC_LINKEDIN_URL,

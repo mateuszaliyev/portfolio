@@ -34,7 +34,7 @@ const ChopTheBillPage = () => (
   <Project
     logo={ChopTheBillLogomark}
     name="ChopTheBill"
-    repository={`${environment.NEXT_PUBLIC_GITHUB_URL}/chopthebill`}
+    repository="/github/chopthebill"
   >
     <Content />
   </Project>

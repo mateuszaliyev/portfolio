@@ -31,7 +31,7 @@ const SpaceTagPage = () => (
   <Project
     logo={SpaceTagLogomark}
     name="SpaceTag"
-    repository={`${environment.NEXT_PUBLIC_GITHUB_URL}/spacetag`}
+    repository="/github/spacetag"
     website="https://spacetag.skni.edu.pl/"
   >
     <Content />
