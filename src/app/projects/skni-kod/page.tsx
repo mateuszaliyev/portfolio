@@ -8,14 +8,22 @@ import { environment } from "@/environment.mjs";
 import Content from "./content.mdx";
 
 const description =
-  "Student Research Group of Computer Science &mdash; ‘Code’ website.";
+  "Student Research Group of Computer Science &mdash; ‘Code’ website";
 const title = "SKNI Kod";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
   description,
+  metadataBase: new URL("/projects/skni-kod", environment.NEXT_PUBLIC_BASE_URL),
   openGraph: {
     description,
+    locale: "en_US",
+    siteName: "Mateusz Aliyev",
     title,
+    type: "website",
+    url: "/",
   },
   title,
 };

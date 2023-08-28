@@ -2,7 +2,7 @@ import { OpenGraphImage } from "@/components/image/open-graph";
 
 import { createImageResponse } from "@/utilities/image-response";
 
-export const alt = "My personal portfolio.";
+export const alt = "My personal portfolio";
 export const contentType = "image/png";
 export const runtime = "edge";
 export const size = {

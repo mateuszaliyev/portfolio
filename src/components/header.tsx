@@ -89,11 +89,16 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           size="large"
         >
           <Link className="pointer-events-auto h-full" href="/">
-            <Logo className="h-full" stroke="url(#gradient-cyan-sky-blue)">
+            <Logo
+              aria-hidden
+              className="h-full"
+              stroke="url(#gradient-cyan-sky-blue)"
+            >
               <defs>
                 <GradientCyanSkyBlue id="gradient-cyan-sky-blue" />
               </defs>
             </Logo>
+            <span className="sr-only">Strona główna</span>
           </Link>
           <button
             className="pointer-events-auto flex w-12 cursor-pointer flex-col items-end justify-center gap-1 outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-sky-500"

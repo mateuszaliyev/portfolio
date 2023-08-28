@@ -2,7 +2,7 @@ import { OpenGraphImage } from "@/components/image/open-graph";
 
 import { createImageResponse } from "@/utilities/image-response";
 
-export const alt = "Cost sharing made easy.";
+export const alt = "Cost sharing made easy";
 export const contentType = "image/png";
 export const runtime = "edge";
 export const size = {
