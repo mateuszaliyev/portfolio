@@ -9,14 +9,18 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Parallax } from "@/components/parallax";
 
-import { BASE_URL } from "@/constants/environment";
 import { jost } from "@/constants/fonts";
+
+import { environment } from "@/environment.mjs";
 
 import "./style.css";
 
 type RootLayoutProps = {
   children: ReactNode;
 };
+
+const description: Metadata["description"] =
+  "Frontend developer based in Poland";
 
 const title: Metadata["title"] = {
   default: "Mateusz Aliyev",
@@ -25,15 +29,17 @@ const title: Metadata["title"] = {
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: BASE_URL,
+    canonical: "/",
   },
-  description: "Frontend developer based in Poland.",
+  description,
+  metadataBase: new URL(environment.NEXT_PUBLIC_BASE_URL),
   openGraph: {
-    locale: "en-US",
+    description,
+    locale: "en_US",
     siteName: "Mateusz Aliyev",
     title,
     type: "website",
-    url: BASE_URL,
+    url: "/",
   },
   robots: {
     follow: false,

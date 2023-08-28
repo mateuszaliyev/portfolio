@@ -3,7 +3,7 @@ import { OpenGraphImage } from "@/components/image/open-graph";
 import { createImageResponse } from "@/utilities/image-response";
 
 export const alt =
-  "Student Research Group of Computer Science &mdash; ‘Code’ website.";
+  "Student Research Group of Computer Science &mdash; ‘Code’ website";
 export const contentType = "image/png";
 export const runtime = "edge";
 export const size = {
