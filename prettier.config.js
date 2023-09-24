@@ -22,7 +22,7 @@ const prettierConfig = {
     else result.push(element);
     return result;
   }, /** @type {string[]} */ ([])),
-  importOrderTypeScriptVersion: "5.1.6",
+  importOrderTypeScriptVersion: "5.2.2",
   jsxSingleQuote: false,
   plugins: [
     require("@ianvs/prettier-plugin-sort-imports"),
