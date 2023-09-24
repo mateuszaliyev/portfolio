@@ -94,9 +94,8 @@ export const Timeline = () => (
       <Headline className="text-center">Timeline</Headline>
       <ul className="mx-auto w-full max-w-screen-md">
         <TimelineEntry
-          date="2023–present"
+          date="2023"
           title={{
-            href: "https://wenanty.group/",
             text: "Wenanty Group",
           }}
         >
@@ -111,6 +110,11 @@ export const Timeline = () => (
               href="https://headlessui.com/"
               logo="headless-ui"
               name="Headless UI"
+            />
+            <TechnologyIcon
+              href="https://mysql.com/"
+              logo="mysql"
+              name="MySQL"
             />
             <TechnologyIcon
               href="https://nextjs.org/"
