@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-import { cx } from "cva";
-
 import { Balancer } from "@/components/balancer";
 import { Container } from "@/components/container";
 import { Link, type LinkProps } from "@/components/link";
+
+import { cx } from "@/utilities/classname";
 
 export type ProjectProps = {
   className?: string;

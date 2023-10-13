@@ -2,8 +2,6 @@ import type { ReactNode } from "react";
 
 import type { Metadata } from "next";
 
-import { cx } from "cva";
-
 import { BalancerProvider } from "@/components/balancer/provider";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -12,6 +10,8 @@ import { Parallax } from "@/components/parallax";
 import { jost } from "@/constants/fonts";
 
 import { environment } from "@/environment.mjs";
+
+import { cx } from "@/utilities/classname";
 
 import "./style.css";
 

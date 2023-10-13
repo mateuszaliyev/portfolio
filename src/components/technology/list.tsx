@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from "react";
 
-import { cx } from "cva";
+import { cx } from "@/utilities/classname";
 
 export type TechnologyListProps = HTMLAttributes<HTMLUListElement>;
 

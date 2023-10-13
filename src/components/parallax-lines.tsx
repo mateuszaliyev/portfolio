@@ -1,8 +1,8 @@
 import type { HTMLAttributes } from "react";
 
-import { cx } from "cva";
-
 import { Lines } from "@/components/lines";
+
+import { cx } from "@/utilities/classname";
 
 export type ParallaxLinesProps = HTMLAttributes<HTMLElement>;
 

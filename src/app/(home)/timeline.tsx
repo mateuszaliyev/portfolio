@@ -1,7 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-import { cx } from "cva";
-
 import { Balancer } from "@/components/balancer";
 import { Container } from "@/components/container";
 import { Headline } from "@/components/headline";
@@ -11,6 +9,7 @@ import { LinkInline } from "@/components/link/inline";
 import { TechnologyIcon } from "@/components/technology/icon";
 import { TechnologyList } from "@/components/technology/list";
 
+import { cx } from "@/utilities/classname";
 import { isExternal } from "@/utilities/url";
 
 type TimelineEntryProps = {
@@ -91,18 +90,18 @@ const TimelineEntry = ({
 export const Timeline = () => (
   <section className="flex flex-col gap-16">
     <Container>
-      <Headline className="text-center">Timeline</Headline>
+      <Headline className="text-center">My timeline</Headline>
       <ul className="mx-auto w-full max-w-screen-md">
         <TimelineEntry
           date="2023"
           title={{
-            text: "Wenanty Group",
+            text: "Freelancing",
           }}
         >
           <TimelineContent>
             Frontend Developer responsible for design, architectural decisions
-            and development of both internal and external client full-stack
-            applications.
+            and development of internal and public full-stack applications for
+            clients from Poland and Switzerland.
           </TimelineContent>
           <TechnologyList>
             <TechnologyIcon href="https://cva.style/" logo="cva" name="cva" />

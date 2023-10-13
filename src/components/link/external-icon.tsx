@@ -1,8 +1,8 @@
 import type { HTMLAttributes } from "react";
 
-import { cx } from "cva";
-
 import { ExternalLinkIcon } from "@/components/icons/external-link";
+
+import { cx } from "@/utilities/classname";
 
 export type LinkExternalIconProps = HTMLAttributes<HTMLElement>;
 

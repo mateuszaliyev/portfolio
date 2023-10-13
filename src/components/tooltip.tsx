@@ -7,7 +7,8 @@ import {
 } from "react";
 
 import { Content, Provider, Root } from "@radix-ui/react-tooltip";
-import { cx } from "cva";
+
+import { cx } from "@/utilities/classname";
 
 export {
   Provider as TooltipProvider,

@@ -25,8 +25,8 @@ const prettierConfig = {
   importOrderTypeScriptVersion: "5.2.2",
   jsxSingleQuote: false,
   plugins: [
-    require("@ianvs/prettier-plugin-sort-imports"),
-    require("prettier-plugin-tailwindcss"),
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
   ],
   printWidth: 80,
   proseWrap: "always",
@@ -47,4 +47,4 @@ const prettierConfig = {
   useTabs: false,
 };
 
-module.exports = prettierConfig;
+export default prettierConfig;
