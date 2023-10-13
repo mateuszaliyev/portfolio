@@ -95,7 +95,7 @@ export const Timeline = () => (
         <TimelineEntry
           date="2023"
           title={{
-            text: "Freelancing",
+            text: "Wenanty Group",
           }}
         >
           <TimelineContent>
