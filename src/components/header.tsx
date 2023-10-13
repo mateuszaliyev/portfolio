@@ -3,7 +3,6 @@
 import { Fragment, useEffect, useState, type HTMLAttributes } from "react";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { cx } from "cva";
 
 import { Container } from "@/components/container";
 import { GradientCyanSkyBlue } from "@/components/gradient/cyan-sky-blue";
@@ -13,6 +12,7 @@ import { Logo } from "@/components/logo";
 
 import { useMediaQuery } from "@/hooks/media-query";
 
+import { cx } from "@/utilities/classname";
 import { isExternal } from "@/utilities/url";
 
 export type HeaderProps = Omit<HTMLAttributes<HTMLElement>, "children">;

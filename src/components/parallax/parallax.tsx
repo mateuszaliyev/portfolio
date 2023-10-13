@@ -4,7 +4,7 @@ import { useEffect, useRef, type HTMLAttributes } from "react";
 
 import { usePathname } from "next/navigation";
 
-import { cx } from "cva";
+import { cx } from "@/utilities/classname";
 
 export type ParallaxProps = HTMLAttributes<HTMLDivElement>;
 

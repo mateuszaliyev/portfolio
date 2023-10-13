@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type HTMLAttributes } from "react";
 
-import { cx } from "cva";
+import { cx } from "@/utilities/classname";
 
 export type CursorMaskProps = HTMLAttributes<HTMLSpanElement>;
 

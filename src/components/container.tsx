@@ -1,11 +1,12 @@
 import type { HTMLAttributes } from "react";
 
-import { cva, type VariantProps } from "cva";
+import { cva, type VariantProps } from "@/utilities/classname";
 
 export type ContainerProps = HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof container>;
 
-const container = cva("w-full px-6 xl:px-20", {
+const container = cva({
+  base: "w-full px-6 xl:px-20",
   defaultVariants: {
     size: "medium",
   },

@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import { cx } from "cva";
-
 import { Badge } from "@/components/badge";
 import { Balancer } from "@/components/balancer";
 import { ChopTheBillLogomarkBackground } from "@/components/chopthebill/logomark-background";
@@ -15,6 +13,7 @@ import { SkniKodLogomark } from "@/components/skni-kod/logomark";
 import { SpaceTagLogomark } from "@/components/spacetag/logomark";
 import { TokiLogomark } from "@/components/toki/logomark";
 
+import { cx } from "@/utilities/classname";
 import { isExternal } from "@/utilities/url";
 
 type SelectedWorkProjectProps = {

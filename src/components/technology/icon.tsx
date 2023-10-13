@@ -1,9 +1,9 @@
 import type { LiHTMLAttributes } from "react";
 
-import { cx } from "cva";
-
 import { Link } from "@/components/link";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tooltip";
+
+import { cx } from "@/utilities/classname";
 
 export type TechnologyIconProps = LiHTMLAttributes<HTMLLIElement> & {
   href?: `https://${string}`;

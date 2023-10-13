@@ -1,4 +1,4 @@
-import { cx } from "cva";
+import { cx } from "@/utilities/classname";
 
 import { LinkExternalIcon } from "./external-icon";
 import { Link, type LinkProps } from "./link";
