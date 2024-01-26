@@ -101,7 +101,12 @@ export const Timeline = () => (
           <TimelineContent>
             Frontend Developer responsible for design, architectural decisions
             and development of internal and public full-stack applications for
-            clients from Poland and Switzerland.
+            clients from Poland and Switzerland, as well as improving the
+            onboarding experience of{" "}
+            <LinkInline href="https://pay2stay.com/" target="_blank">
+              Pay2Stay&apos;s
+            </LinkInline>{" "}
+            progressive web application.
           </TimelineContent>
           <TechnologyList>
             <TechnologyIcon href="https://cva.style/" logo="cva" name="cva" />
@@ -345,14 +350,14 @@ export const Timeline = () => (
           </TimelineContent>
           <TechnologyList>
             <TechnologyIcon
-              href="https://w3.org/html"
-              logo="html"
-              name="HTML"
-            />
-            <TechnologyIcon
               href="https://w3.org/Style/CSS"
               logo="css"
               name="CSS"
+            />
+            <TechnologyIcon
+              href="https://w3.org/html"
+              logo="html"
+              name="HTML"
             />
             <TechnologyIcon
               href="https://ecma-international.org/publications-and-standards/standards/ecma-262"
@@ -377,14 +382,15 @@ export const Timeline = () => (
           </TechnologyList>
         </TimelineEntry>
         <TimelineEntry
-          date="2021"
+          date="2021–present"
           title={{
+            href: "https://fabryka-kreatywnosci.pl/",
             text: "Freelancing",
           }}
         >
           <TimelineContent>
-            Web developer building client e-commerce website using modern
-            frameworks and libraries in Jamstack architectural approach.
+            Web developer building and maintaining an e-commerce website using
+            modern frameworks and libraries in Jamstack architectural approach.
           </TimelineContent>
           <TechnologyList>
             <TechnologyIcon
@@ -392,6 +398,7 @@ export const Timeline = () => (
               logo="contentful"
               name="Contentful"
             />
+            <TechnologyIcon href="https://cva.style/" logo="cva" name="cva" />
             <TechnologyIcon
               href="https://nextjs.org/"
               logo="next-js"
@@ -402,6 +409,7 @@ export const Timeline = () => (
               logo="nodemailer"
               name="Nodemailer"
             />
+            <TechnologyIcon href="https://pnpm.io/" logo="pnpm" name="pnpm" />
             <TechnologyIcon
               href="https://radix-ui.com/"
               logo="radix-ui"
@@ -418,10 +426,16 @@ export const Timeline = () => (
               name="Stitches"
             />
             <TechnologyIcon
+              href="https://tailwindcss.com/"
+              logo="tailwindcss"
+              name="Tailwind CSS"
+            />
+            <TechnologyIcon
               href="https://typescriptlang.org/"
               logo="typescript"
               name="TypeScript"
             />
+            <TechnologyIcon href="https://zod.dev/" logo="zod" name="Zod" />
             <TechnologyIcon
               href="https://vercel.com/"
               logo="vercel"
@@ -442,14 +456,14 @@ export const Timeline = () => (
           </TimelineContent>
           <TechnologyList>
             <TechnologyIcon
-              href="https://w3.org/html"
-              logo="html"
-              name="HTML"
-            />
-            <TechnologyIcon
               href="https://w3.org/Style/CSS"
               logo="css"
               name="CSS"
+            />
+            <TechnologyIcon
+              href="https://w3.org/html"
+              logo="html"
+              name="HTML"
             />
             <TechnologyIcon
               href="https://ecma-international.org/publications-and-standards/standards/ecma-262"
@@ -491,14 +505,14 @@ export const Timeline = () => (
           </TimelineContent>
           <TechnologyList>
             <TechnologyIcon
-              href="https://w3.org/html"
-              logo="html"
-              name="HTML"
-            />
-            <TechnologyIcon
               href="https://w3.org/Style/CSS"
               logo="css"
               name="CSS"
+            />
+            <TechnologyIcon
+              href="https://w3.org/html"
+              logo="html"
+              name="HTML"
             />
           </TechnologyList>
         </TimelineEntry>
@@ -513,14 +527,14 @@ export const Timeline = () => (
           <TimelineContent>IT Technician.</TimelineContent>
           <TechnologyList>
             <TechnologyIcon
-              href="https://w3.org/html"
-              logo="html"
-              name="HTML"
-            />
-            <TechnologyIcon
               href="https://w3.org/Style/CSS"
               logo="css"
               name="CSS"
+            />
+            <TechnologyIcon
+              href="https://w3.org/html"
+              logo="html"
+              name="HTML"
             />
             <TechnologyIcon
               href="https://ecma-international.org/publications-and-standards/standards/ecma-262"

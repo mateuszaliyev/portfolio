@@ -1,4 +1,3 @@
-import headlessUiPlugin from "@headlessui/tailwindcss";
 import tailwindCssTypographyPlugin from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import tailwindCssAnimatePlugin from "tailwindcss-animate";
@@ -7,13 +6,11 @@ import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
 const tailwindCssConfig: Config = {
-  content: ["./src/**/*.{mdx,ts,tsx}"],
-  darkMode: "media",
+  content: ["./src/**/*.{js,jsx,mdx,ts,tsx}"],
   future: {
     hoverOnlyWhenSupported: true,
   },
   plugins: [
-    headlessUiPlugin,
     tailwindCssAnimatePlugin,
     tailwindCssTypographyPlugin,
     plugin(({ matchUtilities, theme }) => {

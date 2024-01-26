@@ -1,10 +1,9 @@
 import type { ReactNode } from "react";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { BalancerProvider } from "@/components/balancer/provider";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Parallax } from "@/components/parallax";
 
 import { jost } from "@/constants/fonts";
@@ -14,6 +13,8 @@ import { environment } from "@/environment.mjs";
 import { cx } from "@/utilities/classname";
 
 import "./style.css";
+
+import { GradientCyanSkyBlue } from "@/components/gradient/cyan-sky-blue";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -65,22 +66,34 @@ export const metadata: Metadata = {
     nosnippet: true,
     notranslate: true,
   },
-  themeColor: "#000000",
   title,
   twitter: {
     card: "summary_large_image",
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#000000",
+};
+
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html className={cx("scroll-smooth", jost.variable)} lang="en">
     <body className="bg-white text-gray-700 antialiased">
       <BalancerProvider>
-        <Header />
         <Parallax>
           {children}
           <Footer />
         </Parallax>
+        <svg
+          aria-hidden
+          className="h-0 w-0"
+          viewBox="0 0 1 1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <GradientCyanSkyBlue id="gradient-cyan-sky-blue" />
+          </defs>
+        </svg>
       </BalancerProvider>
     </body>
   </html>

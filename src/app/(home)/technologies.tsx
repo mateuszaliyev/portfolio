@@ -339,20 +339,20 @@ export const Technologies = ({ font }: TechnologiesProps) => {
                   (isLargeBreakpoint
                     ? 32
                     : isMediumBreakpoint
-                    ? 24
-                    : isSmallBreakpoint
-                    ? 20
-                    : 16)
+                      ? 24
+                      : isSmallBreakpoint
+                        ? 20
+                        : 16)
                 }
                 height={height}
                 padding={
                   isLargeBreakpoint
                     ? 8
                     : isMediumBreakpoint
-                    ? 6
-                    : isSmallBreakpoint
-                    ? 5
-                    : 4
+                      ? 6
+                      : isSmallBreakpoint
+                        ? 5
+                        : 4
                 }
                 random={() => 0.5}
                 rotate={0}
