@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@import "./animate.css";
+
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-*: initial;
+  --font-*: initial;
+
+  --animate-collapsible-in: collapsible-in 0.15s ease-out;
+  --animate-collapsible-out: collapsible-out 0.15s ease-out;
+  --animate-fade-in: fade-in 1s ease both;
+  --animate-fade-in-blur-to-top: fade-in-blur-to-top 1s ease both;
+  --animate-fade-in-scale-down: fade-in-scale-down 1s ease both;
+  --animate-marquee: marquee 10s linear infinite;
+  --animate-scroll-progress: scroll-progress linear both;
+  --animate-shine: shine 0.8s linear;
+
+  --breakpoint-2xs: 22.5rem;
+  --breakpoint-xs: 30rem;
+
+  --color-black: #000;
+
+  --color-gray-50: oklch(0.9851 0 0);
+  --color-gray-100: oklch(0.9694 0.0011 197.14);
+  --color-gray-200: oklch(0.9237 0.0026 228.79);
+  --color-gray-300: oklch(0.8751 0.0035 247.86);
+  --color-gray-400: oklch(0.7223 0.0081 241.71);
+  --color-gray-500: oklch(0.5606 0.0091 253.9);
+  --color-gray-600: oklch(0.4537 0.0091 241.83);
+  --color-gray-700: oklch(0.3777 0.0079 255.54);
+  --color-gray-800: oklch(0.2793 0.0034 228.91);
+  --color-gray-900: oklch(0.216 0.0037 228.98);
+  --color-gray-950: oklch(0.144 0.0028 247.09);
+
+  --color-white: #fff;
+
+  --default-transition-duration: 200ms;
+
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --z-ambient: calc(var(--z-header) - 1);
+  --z-header: 2;
+
+  @keyframes collapsible-in {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes collapsible-out {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-blur-to-top {
+    from {
+      filter: blur(10px);
+      opacity: 0;
+      transform: translateY(min(20%, 1rem));
+    }
+    to {
+      filter: blur(0px);
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes fade-in-scale-down {
+    from {
+      filter: blur(10px);
+      opacity: 0;
+      transform: scale(1.2);
+    }
+    to {
+      filter: blur(0px);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--marquee-gap, 0)));
+    }
+  }
+
+  @keyframes scroll-progress {
+    from {
+      --scroll-progress: 0;
+    }
+    to {
+      --scroll-progress: 1;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0 0;
+      opacity: 0;
+    }
+    20% {
+      background-position: 0 0;
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      background-position: 180% 0;
+      opacity: 0;
+    }
+  }
+}
+
+@property --radix-navigation-menu-viewport-height {
+  inherits: false;
+  initial-value: 0rem;
+  syntax: "<length>";
+}
+
+@property --scroll-progress {
+  inherits: false;
+  initial-value: 0;
+  syntax: "<number>";
+}
+
+@utility bg-spotlight {
+  --scroll-progress: 1;
+  --spotlight-color-bottom: transparent;
+  --spotlight-color-top: rgba(97, 106, 115, 0.12);
+  --spotlight-position-left: calc(80% - 80% * var(--scroll-progress));
+  --spotlight-position-right: calc(20% + 80% * var(--scroll-progress));
+  --spotlight-size: 36rem;
+
+  opacity: calc(80% + 20% * var(--scroll-progress));
+  position: relative;
+
+  &:before {
+    background:
+      conic-gradient(
+          from 90deg at var(--spotlight-position-left) 0%,
+          var(--spotlight-color-top),
+          var(--spotlight-color-bottom) 180deg
+        )
+        0% 0% / 50% 100% no-repeat,
+      conic-gradient(
+          from 270deg at var(--spotlight-position-right) 0%,
+          var(--spotlight-color-bottom) 180deg,
+          var(--spotlight-color-top)
+        )
+        100% 0% / 50% 100% no-repeat;
+    /* background: linear-gradient(
+      to bottom,
+      transparent 70%,
+      theme(colors.gray.950)
+    ); */
+    content: var(--tw-content, "");
+    height: var(--spotlight-size);
+    left: 0;
+    mask-image: linear-gradient(#fff, #0000 var(--spotlight-size));
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+@variant hocus (&:focus, &:hover);
+@variant hocus-visible (&:focus-visible, &:hover);
+@variant hocus-within (&:focus-within, &:hover);
+@variant supports-scroll-driven-animations (@supports (animation-timeline: view()));
