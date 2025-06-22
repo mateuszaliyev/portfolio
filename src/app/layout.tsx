@@ -3,7 +3,13 @@ import "@/satin/style.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { Access, Logo, LogoColorScheme, Platform } from "@/constants";
+import {
+  Access,
+  ContentType,
+  Logo,
+  LogoColorScheme,
+  Platform,
+} from "@/constants";
 
 import { Body } from "@/satin/body";
 import { Button } from "@/satin/button";
@@ -24,7 +30,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuLogo,
-  NavigationMenuLogoContainer,
   NavigationMenuSocialItem,
   NavigationMenuSocialLink,
   NavigationMenuSocialList,
@@ -35,7 +40,7 @@ import { api } from "@/server/api";
 
 import { createLogoPicker } from "@/utilities/logo";
 import { index } from "@/utilities/metadata";
-import { dataUrlIfSvg, getPlatformIfProfile, paths } from "@/utilities/url";
+import { getPlatformIfProfile, paths } from "@/utilities/url";
 
 const pickLogo = createLogoPicker({
   order: {
@@ -88,14 +93,15 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
                 <NavigationMenuList>
                   {logo && (
                     <NavigationMenuItem>
-                      <NavigationMenuTrigger asChild>
+                      <NavigationMenuTrigger asChild className="px-2">
                         <NavigationMenuLink href={paths.home()}>
-                          <NavigationMenuLogoContainer>
-                            <NavigationMenuLogo
-                              alt="Homepage"
-                              src={dataUrlIfSvg(logo)}
-                            />
-                          </NavigationMenuLogoContainer>
+                          <NavigationMenuLogo
+                            alt="Homepage"
+                            height={logo.height}
+                            src={paths.api.logo(logo.id)}
+                            unoptimized={logo.contentType === ContentType.Svg}
+                            width={logo.width}
+                          />
                         </NavigationMenuLink>
                       </NavigationMenuTrigger>
                     </NavigationMenuItem>

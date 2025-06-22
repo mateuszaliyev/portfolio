@@ -180,16 +180,12 @@ export const NavigationMenuList = ({
 
 export const NavigationMenuLogo = ({
   alt = "",
-  fill = true,
-  ...props
-}: ImageProps) => <Image alt={alt} fill={fill} {...props} />;
-
-export const NavigationMenuLogoContainer = ({
   className,
   ...props
-}: React.ComponentProps<"div">) => (
-  <div
-    className={cx("relative -mx-1 size-6 brightness-0 invert", className)}
+}: ImageProps) => (
+  <Image
+    alt={alt}
+    className={cx("size-6 brightness-0 invert", className)}
     {...props}
   />
 );
