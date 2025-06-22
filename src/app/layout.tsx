@@ -13,7 +13,15 @@ import {
 
 import { Body } from "@/satin/body";
 import { Button } from "@/satin/button";
-import { PreFooter, PreFooterContainer } from "@/satin/footer";
+import {
+  Footer,
+  FooterContainer,
+  FooterLink,
+  FooterLogo,
+  FooterSection,
+  PreFooter,
+  PreFooterContainer,
+} from "@/satin/footer";
 import { Header, HeaderContainer } from "@/satin/header";
 import { Html } from "@/satin/html";
 import { PlatformIcon } from "@/satin/icons/platform";
@@ -37,6 +45,7 @@ import {
 } from "@/satin/navigation/menu";
 
 import { api } from "@/server/api";
+import { parseEmploymentsFromPersonEntities } from "@/server/utilities/employment";
 
 import { createLogoPicker } from "@/utilities/logo";
 import { index } from "@/utilities/metadata";
@@ -67,6 +76,8 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
   ]);
 
   if (!person || !software) return null;
+
+  const employments = parseEmploymentsFromPersonEntities(person.entities);
 
   const links = person.links
     ?.map((link) => ({
@@ -220,6 +231,48 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
             </div>
           </PreFooterContainer>
         </PreFooter>
+        <Footer>
+          <FooterContainer>
+            <FooterSection className="col-span-full flex flex-wrap items-center justify-between gap-6">
+              <FooterLink
+                className="flex items-center gap-2"
+                href={paths.home()}
+              >
+                {logo && (
+                  <FooterLogo
+                    alt="Homepage"
+                    height={logo.height}
+                    src={paths.api.logo(logo.id)}
+                    unoptimized={logo.contentType === ContentType.Svg}
+                    width={logo.width}
+                  />
+                )}
+                <span className="mt-0.5 whitespace-nowrap">
+                  {person.name}
+                  <span className="max-xs:sr-only">
+                    {" "}
+                    &mdash; {employments[0]?.position}
+                  </span>
+                </span>
+              </FooterLink>
+              {links && links.length > 0 && (
+                <ul className="flex items-center gap-6">
+                  {links.map((link, index) => (
+                    <li key={index}>
+                      <FooterLink href={link.url} target="_blank">
+                        <span className="sr-only">{link.description}</span>
+                        <PlatformIcon
+                          className="size-4.5"
+                          platform={link.platform!}
+                        />
+                      </FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </FooterSection>
+          </FooterContainer>
+        </Footer>
       </Body>
     </Html>
   );
