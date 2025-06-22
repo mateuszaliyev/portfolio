@@ -205,16 +205,16 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
               Get in touch.
             </h2>
             <div className="flex items-center gap-2">
+              {person.email && (
+                <Button asChild shine size="lg">
+                  <Link href={`mailto:${person.email}`}>Email</Link>
+                </Button>
+              )}
               {linkedIn && (
                 <Button asChild color="secondary" size="lg">
                   <Link href={linkedIn.url} target="_blank">
                     {linkedIn.description}
                   </Link>
-                </Button>
-              )}
-              {person.email && (
-                <Button asChild shine size="lg">
-                  <Link href={`mailto:${person.email}`}>Email</Link>
                 </Button>
               )}
             </div>
