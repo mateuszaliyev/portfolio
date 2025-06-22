@@ -413,8 +413,9 @@ const Homepage = async () => {
               <SectionDeck>
                 The technologies I work with to{" "}
                 <span className="text-white">
-                  solve problems and build products.
+                  solve problems and build products
                 </span>
+                .
               </SectionDeck>
             </SectionHeader>
             <Tabs defaultValue="featured">
