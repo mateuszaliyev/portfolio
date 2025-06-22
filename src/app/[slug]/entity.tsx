@@ -2,7 +2,13 @@ import { Fragment } from "react";
 
 import { notFound } from "next/navigation";
 
-import { Access, ContentType, Logo, LogoColorScheme } from "@/constants";
+import {
+  Access,
+  ContentType,
+  EntityPersonRelationship,
+  Logo,
+  LogoColorScheme,
+} from "@/constants";
 import { format } from "date-fns";
 
 import { environment } from "@/environment";
@@ -70,7 +76,9 @@ const pickLogo = createLogoPicker({
 
 export const EntityPage = ({ entity }: EntityPageProps) => {
   const entries = entity.people.filter(
-    ({ person }) => person.slug === environment.PERSON_SLUG,
+    ({ person, relationship }) =>
+      person.slug === environment.PERSON_SLUG &&
+      relationship !== EntityPersonRelationship.Student,
   );
 
   if (!entries.length) notFound();
