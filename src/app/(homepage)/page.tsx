@@ -232,14 +232,6 @@ const Homepage = async () => {
                 </Button>
               </FadeInBlurToTop>
             </SectionButtons>
-            <FadeInBlurToTop asChild delay={1500}>
-              <Banner className="mt-10 gap-3">
-                <Heading asChild level="none">
-                  <span>New: Website</span>
-                </Heading>
-                <span className="text-gray-400">Work in progress...</span>
-              </Banner>
-            </FadeInBlurToTop>
           </SectionContainer>
         </Section>
         <HomepageTools software={software} technologies={technologies} />
