@@ -3,12 +3,15 @@ import "@/satin/style.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { Access, Logo, LogoColorScheme } from "@/constants";
+import { Access, Logo, LogoColorScheme, Platform } from "@/constants";
 
 import { Body } from "@/satin/body";
+import { Button } from "@/satin/button";
+import { PreFooter, PreFooterContainer } from "@/satin/footer";
 import { Header, HeaderContainer } from "@/satin/header";
 import { Html } from "@/satin/html";
 import { PlatformIcon } from "@/satin/icons/platform";
+import { Link } from "@/satin/link";
 import {
   NavigationMenu,
   NavigationMenuDropdown,
@@ -70,6 +73,8 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
         link.access === Access.Public && typeof link.platform !== "undefined",
     )
     .sort((a, z) => a.platform!.localeCompare(z.platform!));
+
+  const linkedIn = links?.find((link) => link.platform === Platform.LinkedIn);
 
   const logo = pickLogo(software.logos.map(({ logo }) => logo));
 
@@ -186,6 +191,29 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
           </HeaderContainer>
         </Header>
         {children}
+        <PreFooter id="get-in-touch">
+          <PreFooterContainer className="flex flex-col justify-between gap-8 sm:flex-row sm:items-center">
+            <h2 className="text-4xl leading-[1.1] font-medium tracking-tight text-balance text-white">
+              Want to work together?
+              <br />
+              Get in touch.
+            </h2>
+            <div className="flex items-center gap-2">
+              {linkedIn && (
+                <Button asChild color="secondary" size="lg">
+                  <Link href={linkedIn.url} target="_blank">
+                    {linkedIn.description}
+                  </Link>
+                </Button>
+              )}
+              {person.email && (
+                <Button asChild shine size="lg">
+                  <Link href={`mailto:${person.email}`}>Email</Link>
+                </Button>
+              )}
+            </div>
+          </PreFooterContainer>
+        </PreFooter>
       </Body>
     </Html>
   );

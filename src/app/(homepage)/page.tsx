@@ -3,7 +3,6 @@ import {
   EntityPersonRelationship,
   Logo,
   LogoColorScheme,
-  Platform,
   Schedule,
   SoftwareType,
 } from "@/constants";
@@ -28,7 +27,6 @@ import {
   CardParagraph,
   Cards,
 } from "@/satin/card";
-import { PreFooter, PreFooterContainer } from "@/satin/footer";
 import { ChevronIcon } from "@/satin/icons/chevron";
 import { Link } from "@/satin/link";
 import {
@@ -67,7 +65,7 @@ import {
   formatSoftwareName,
   formatSoftwareType,
 } from "@/utilities/string";
-import { getPlatformIfProfile, paths } from "@/utilities/url";
+import { paths } from "@/utilities/url";
 
 type StackType = SoftwareType | typeof FEATURED;
 
@@ -170,10 +168,6 @@ const Homepage = async () => {
         to: entityEmployments.at(-1)!.to,
       };
     });
-
-  const linkedIn = person.links
-    ?.map((link) => ({ ...link, platform: getPlatformIfProfile(link.url) }))
-    .find((link) => link.platform === Platform.LinkedIn);
 
   const technologies = await api.software.get({
     slugs: [
@@ -553,29 +547,6 @@ const Homepage = async () => {
             </Tabs>
           </SectionContainer>
         </Section>
-        <PreFooter id="get-in-touch">
-          <PreFooterContainer className="flex flex-col justify-between gap-8 sm:flex-row sm:items-center">
-            <h2 className="text-4xl leading-[1.1] font-medium tracking-tight text-balance text-white">
-              Want to work together?
-              <br />
-              Get in touch.
-            </h2>
-            <div className="flex items-center gap-2">
-              {linkedIn && (
-                <Button asChild color="secondary" size="lg">
-                  <Link href={linkedIn.url} target="_blank">
-                    {linkedIn.description}
-                  </Link>
-                </Button>
-              )}
-              {person.email && (
-                <Button asChild shine size="lg">
-                  <Link href={`mailto:${person.email}`}>Email</Link>
-                </Button>
-              )}
-            </div>
-          </PreFooterContainer>
-        </PreFooter>
       </Main>
     </>
   );
