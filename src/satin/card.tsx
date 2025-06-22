@@ -1,3 +1,4 @@
+import cardGrid from "@/satin/assets/card-grid.svg";
 import {
   cva,
   cx,
@@ -55,6 +56,40 @@ export const Cards = ({ asChild, className, ...props }: CardsProps) => {
     />
   );
 };
+
+export const CardGrid = ({
+  "aria-hidden": ariaHidden = "true",
+  children,
+  className,
+  ...props
+}: React.ComponentProps<"div">) => (
+  <div
+    aria-hidden={ariaHidden}
+    className={cx(
+      "pointer-events-none absolute top-0 right-0 h-56 w-66 mask-radial-from-black mask-radial-from-20% mask-radial-to-transparent mask-radial-to-70% mask-radial-at-top-right text-white",
+      className,
+    )}
+    {...props}
+  >
+    <Image alt="" className="size-full" src={cardGrid} unoptimized />
+    {children}
+  </div>
+);
+
+export const CardGridImage = ({
+  alt = "",
+  className,
+  ...props
+}: ImageProps) => (
+  <Image
+    alt={alt}
+    className={cx(
+      "absolute top-8 right-8 w-40 opacity-10 brightness-0 invert",
+      className,
+    )}
+    {...props}
+  />
+);
 
 export const CardHeading = ({
   asChild,

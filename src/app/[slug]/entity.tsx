@@ -12,6 +12,8 @@ import { Article } from "@/satin/article";
 import { Button, ButtonTruncate } from "@/satin/button";
 import {
   Card,
+  CardGrid,
+  CardGridImage,
   CardHeading,
   CardIcon,
   CardIconImage,
@@ -214,6 +216,17 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
                   return (
                     <Card asChild clickable key={software.id}>
                       <Link href={paths.software(software.slug)}>
+                        <CardGrid>
+                          {logo && (
+                            <CardGridImage
+                              alt={name}
+                              height={logo.height}
+                              src={paths.api.logo(logo.id)}
+                              unoptimized={logo.contentType === ContentType.Svg}
+                              width={logo.width}
+                            />
+                          )}
+                        </CardGrid>
                         <CardIcon>
                           {logo && (
                             <CardIconImage

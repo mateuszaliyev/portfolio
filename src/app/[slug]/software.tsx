@@ -7,6 +7,8 @@ import { Article } from "@/satin/article";
 import { Button, ButtonTruncate } from "@/satin/button";
 import {
   Card,
+  CardGrid,
+  CardGridImage,
   CardHeading,
   CardIcon,
   CardIconImage,
@@ -170,6 +172,17 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
                   return (
                     <Card asChild clickable key={dependent.id}>
                       <Link href={paths.software(dependent.slug)}>
+                        <CardGrid>
+                          {logo && (
+                            <CardGridImage
+                              alt={name}
+                              height={logo.height}
+                              src={paths.api.logo(logo.id)}
+                              unoptimized={logo.contentType === ContentType.Svg}
+                              width={logo.width}
+                            />
+                          )}
+                        </CardGrid>
                         <CardIcon>
                           {logo && (
                             <CardIconImage

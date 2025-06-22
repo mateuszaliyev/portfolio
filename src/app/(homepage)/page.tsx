@@ -20,6 +20,8 @@ import { Banner } from "@/satin/banner";
 import { Button, ButtonTruncate } from "@/satin/button";
 import {
   Card,
+  CardGrid,
+  CardGridImage,
   CardHeading,
   CardIcon,
   CardIconImage,
@@ -272,6 +274,17 @@ const Homepage = async () => {
                 return (
                   <Card asChild clickable key={employment.id}>
                     <Link href={paths.entity(employment.entity.slug)}>
+                      <CardGrid>
+                        {logo && (
+                          <CardGridImage
+                            alt={employment.entity.name}
+                            height={logo.height}
+                            src={paths.api.logo(logo.id)}
+                            unoptimized={logo.contentType === ContentType.Svg}
+                            width={logo.width}
+                          />
+                        )}
+                      </CardGrid>
                       <CardIcon>
                         {logo && (
                           <CardIconImage
@@ -337,6 +350,17 @@ const Homepage = async () => {
 
                   return (
                     <Card key={education.id}>
+                      <CardGrid>
+                        {logo && (
+                          <CardGridImage
+                            alt={education.entity.name}
+                            height={logo.height}
+                            src={paths.api.logo(logo.id)}
+                            unoptimized={logo.contentType === ContentType.Svg}
+                            width={logo.width}
+                          />
+                        )}
+                      </CardGrid>
                       <CardIcon>
                         {logo && (
                           <CardIconImage
@@ -417,6 +441,17 @@ const Homepage = async () => {
                   return (
                     <Card asChild clickable key={software.id}>
                       <Link href={paths.software(software.slug)}>
+                        <CardGrid>
+                          {logo && (
+                            <CardGridImage
+                              alt={name}
+                              height={logo.height}
+                              src={paths.api.logo(logo.id)}
+                              unoptimized={logo.contentType === ContentType.Svg}
+                              width={logo.width}
+                            />
+                          )}
+                        </CardGrid>
                         <CardIcon>
                           {logo && (
                             <CardIconImage
