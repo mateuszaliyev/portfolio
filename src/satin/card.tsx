@@ -84,7 +84,7 @@ export const CardGridImage = ({
   <Image
     alt={alt}
     className={cx(
-      "absolute top-8 right-8 w-40 opacity-10 brightness-0 invert",
+      "absolute top-8 right-8 w-40 pt-px pr-px opacity-10 brightness-0 invert",
       className,
     )}
     {...props}
