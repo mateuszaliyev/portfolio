@@ -7,7 +7,7 @@ export const PreFooter = ({
 }: React.ComponentProps<"section">) => (
   <section
     className={cx(
-      "bg-gradient-to-b from-transparent to-gray-900 to-55%",
+      "bg-gradient-to-b from-transparent to-gray-900 to-45%",
       className,
     )}
     {...props}
