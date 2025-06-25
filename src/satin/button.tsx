@@ -10,7 +10,7 @@ export interface ButtonProps
 }
 
 const button = cva({
-  base: "group/button relative flex cursor-pointer items-center justify-center gap-2 border text-center font-medium transition-all outline-none disabled:cursor-not-allowed has-[.truncate]:truncate",
+  base: "group/button relative flex cursor-pointer items-center justify-center gap-2 border text-center font-medium transition-all outline-none disabled:cursor-not-allowed has-[.truncate]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
   compoundVariants: [
     {
       className: "not-disabled:active:scale-97",

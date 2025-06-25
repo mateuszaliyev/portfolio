@@ -1,4 +1,10 @@
-import { ContentType, Logo, LogoColorScheme, SoftwareType } from "@/constants";
+import {
+  ContentType,
+  LinkType,
+  Logo,
+  LogoColorScheme,
+  SoftwareType,
+} from "@/constants";
 
 import { environment } from "@/environment";
 
@@ -25,7 +31,9 @@ import {
   IconHeroIcon,
   IconHeroImage,
 } from "@/satin/hero/icon";
+import { ArrowDiagonalIcon } from "@/satin/icons/arrow";
 import { ChevronIcon } from "@/satin/icons/chevron";
+import { GitBranchIcon } from "@/satin/icons/git";
 import { Link } from "@/satin/link";
 import {
   List,
@@ -38,6 +46,7 @@ import { Mdx } from "@/satin/mdx";
 import {
   Main,
   Section,
+  SectionButtons,
   SectionContainer,
   SectionDeck,
   SectionHeader,
@@ -87,6 +96,10 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
         )
       : undefined;
 
+  const source = software.links?.filter(
+    (link) => isAccessible(link.access) && link.type === LinkType.Source,
+  );
+
   return (
     <Main padding="header">
       <IconHero>
@@ -115,6 +128,7 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
                   <Button asChild glow shine size="lg">
                     <Link href={link.url} target="_blank">
                       <ButtonTruncate>Visit site</ButtonTruncate>
+                      <ArrowDiagonalIcon />
                     </Link>
                   </Button>
                 )}
@@ -233,6 +247,21 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
                   Explore the core technologies and essential tools powering{" "}
                   <span className="text-white">{name}</span>.
                 </SectionDeck>
+                {source && source.length > 0 && (
+                  <SectionButtons align="start" margin="sm">
+                    {source.map((link, index) => (
+                      <Button asChild color="secondary" key={index}>
+                        <Link href={link.url} target="_blank">
+                          <GitBranchIcon />
+                          <ButtonTruncate>
+                            {link.description || "View source"}
+                          </ButtonTruncate>
+                          <ArrowDiagonalIcon />
+                        </Link>
+                      </Button>
+                    ))}
+                  </SectionButtons>
+                )}
               </SectionHeader>
               <List className="mt-8 grid-cols-[auto_1fr_auto]">
                 {software.dependencies

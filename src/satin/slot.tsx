@@ -1,3 +1,3 @@
-export { Slot, Slottable } from "@radix-ui/react-slot";
+export { Slot, Slottable, type SlotProps } from "@radix-ui/react-slot";
 
 export type AsChild = { asChild?: boolean };

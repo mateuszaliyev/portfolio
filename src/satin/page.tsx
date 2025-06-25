@@ -41,10 +41,10 @@ const main = cva({ variants: { padding: { header: "pt-14.5 sm:pt-16.5" } } });
 
 const sectionButtons = cva({
   base: "flex items-center justify-center gap-4",
-  defaultVariants: { align: "center", margin: true },
+  defaultVariants: { align: "center", margin: "lg" },
   variants: {
     align: { center: "justify-center", start: "justify-start" },
-    margin: { true: "mt-10" },
+    margin: { lg: "mt-10", md: "mt-6", sm: "mt-4" },
   },
 });
 
