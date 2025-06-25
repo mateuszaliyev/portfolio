@@ -99,7 +99,10 @@ export const HomepageTools = ({
           </Link>
         </FadeInBlurToTop>
       </SectionContainer>
-      <div className="mb-24 mask-x-from-95% mask-x-to-99% md:hidden">
+      <FadeInBlurToTop
+        className="mb-24 mask-x-from-95% mask-x-to-99% md:hidden"
+        delay={2200}
+      >
         <Link className="block" href="#stack">
           <Marquee>
             <MarqueeContent className="[animation-duration:20s]">
@@ -124,7 +127,7 @@ export const HomepageTools = ({
             </MarqueeContent>
           </Marquee>
         </Link>
-      </div>
+      </FadeInBlurToTop>
     </Section>
   );
 };
