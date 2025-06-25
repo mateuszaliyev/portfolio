@@ -3,7 +3,6 @@ import {
   EntityPersonRelationship,
   Logo,
   LogoColorScheme,
-  Schedule,
   SoftwareType,
 } from "@/constants";
 
@@ -15,7 +14,6 @@ import {
   FadeInBlurToTop,
   StaggerFadeInBlurToTop,
 } from "@/satin/animation/fade-in";
-import { Banner } from "@/satin/banner";
 import { Button, ButtonTruncate } from "@/satin/button";
 import {
   Card,
