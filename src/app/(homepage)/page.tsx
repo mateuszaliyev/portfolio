@@ -356,7 +356,9 @@ const Homepage = async () => {
             <Cards className="mt-8 sm:mt-24">
               {person.software
                 .toSorted((a, z) =>
-                  a.software.name.localeCompare(z.software.name),
+                  formatSoftwareName(a.software).localeCompare(
+                    formatSoftwareName(z.software),
+                  ),
                 )
                 .map(({ software }) => {
                   const logo = pickLogo(software.logos.map(({ logo }) => logo));
@@ -441,11 +443,17 @@ const Homepage = async () => {
                   <List className="grid-cols-[auto_1fr_auto]">
                     {stack
                       .get(stackType)
-                      ?.toSorted((a, z) => a.name.localeCompare(z.name))
+                      ?.toSorted((a, z) =>
+                        formatSoftwareName(a).localeCompare(
+                          formatSoftwareName(z),
+                        ),
+                      )
                       .map((software) => {
                         const logo = pickLogo(
                           software.logos.map(({ logo }) => logo),
                         );
+
+                        const name = formatSoftwareName(software);
 
                         return (
                           <ListItem key={software.id}>
@@ -453,7 +461,7 @@ const Homepage = async () => {
                               <div>
                                 {logo && (
                                   <ListItemIcon
-                                    alt={software.name}
+                                    alt={name}
                                     height={logo.height}
                                     src={paths.api.logo(logo.id)}
                                     unoptimized={
@@ -463,7 +471,7 @@ const Homepage = async () => {
                                   />
                                 )}
                               </div>
-                              <ListItemTitle>{software.name}</ListItemTitle>
+                              <ListItemTitle>{name}</ListItemTitle>
                               <div className="flex items-center gap-1.5 text-white">
                                 {/* <p>Learn more</p> */}
                                 <ChevronIcon className="size-4 rotate-90" />

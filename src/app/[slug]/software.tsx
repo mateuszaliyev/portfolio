@@ -89,11 +89,17 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
 
   const projects =
     software.type !== SoftwareType.Application
-      ? software.dependents.filter(({ dependent }) =>
-          dependent.people.some(
-            ({ person }) => person.slug === environment.PERSON_SLUG,
-          ),
-        )
+      ? software.dependents
+          .filter(({ dependent }) =>
+            dependent.people.some(
+              ({ person }) => person.slug === environment.PERSON_SLUG,
+            ),
+          )
+          .sort((a, z) =>
+            formatSoftwareName(a.dependent).localeCompare(
+              formatSoftwareName(z.dependent),
+            ),
+          )
       : undefined;
 
   const source = software.links?.filter(
@@ -266,7 +272,9 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
               <List className="mt-8 grid-cols-[auto_1fr_auto]">
                 {software.dependencies
                   .toSorted((a, z) =>
-                    a.dependency.name.localeCompare(z.dependency.name),
+                    formatSoftwareName(a.dependency).localeCompare(
+                      formatSoftwareName(z.dependency),
+                    ),
                   )
                   .map(({ dependency }) => {
                     const logo = pickLogo(

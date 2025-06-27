@@ -134,7 +134,7 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
         ({ person }) => person.slug === environment.PERSON_SLUG,
       ),
     )
-    .sort((a, z) => a.name.localeCompare(z.name));
+    .sort((a, z) => formatSoftwareName(a).localeCompare(formatSoftwareName(z)));
 
   const to = entries.at(-1)?.to;
 
