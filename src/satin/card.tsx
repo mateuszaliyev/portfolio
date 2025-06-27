@@ -8,16 +8,42 @@ import {
 import { Image, type ImageProps } from "@/satin/image";
 import { Slot, Slottable, type AsChild } from "@/satin/slot";
 
+import type { Logo } from "@/server/database/schema";
+
+import { logoImageProps } from "@/utilities/logo";
+
 export interface CardProps
   extends ComponentPropsWithClassName<"div">,
     AsChild,
     VariantProps<typeof card> {}
 
-export interface CardsProps extends React.ComponentProps<"div">, AsChild {}
+export interface CardGridImageProps
+  extends Omit<ImageProps, "alt">,
+    Partial<Pick<ImageProps, "alt">> {}
+
+export interface CardGridLogoProps
+  extends Omit<CardGridImageProps, "src">,
+    Partial<Pick<CardGridImageProps, "src">> {
+  logo: Logo;
+}
 
 export interface CardHeadingProps extends React.ComponentProps<"h3">, AsChild {}
 
+export type CardIconProps = React.ComponentProps<"div">;
+
+export interface CardIconImageProps
+  extends Omit<ImageProps, "alt">,
+    Partial<Pick<ImageProps, "alt">> {}
+
+export interface CardIconLogoProps
+  extends Omit<CardIconImageProps, "src">,
+    Partial<Pick<CardIconImageProps, "src">> {
+  logo: Logo;
+}
+
 export type CardParagraphProps = ComponentPropsWithClassName<"p">;
+
+export interface CardsProps extends React.ComponentProps<"div">, AsChild {}
 
 const card = cva({
   base: "group relative isolate flex flex-col gap-4 overflow-hidden rounded-xl border border-white/5 bg-[color-mix(in_oklch,var(--color-gray-900),var(--color-gray-950))] p-6 transition",
@@ -80,7 +106,7 @@ export const CardGridImage = ({
   alt = "",
   className,
   ...props
-}: ImageProps) => (
+}: CardGridImageProps) => (
   <Image
     alt={alt}
     className={cx(
@@ -89,6 +115,10 @@ export const CardGridImage = ({
     )}
     {...props}
   />
+);
+
+export const CardGridLogo = ({ logo, ...props }: CardGridLogoProps) => (
+  <CardGridImage {...logoImageProps(logo)} {...props} />
 );
 
 export const CardHeading = ({
@@ -109,13 +139,10 @@ export const CardHeading = ({
   );
 };
 
-export const CardIcon = ({
-  className,
-  ...props
-}: React.ComponentProps<"div">) => (
+export const CardIcon = ({ className, ...props }: CardIconProps) => (
   <div
     className={cx(
-      "relative mb-14 flex size-12 items-center justify-center rounded-sm bg-gray-900 select-none",
+      "relative mb-14 flex size-12 items-center justify-center rounded-sm bg-gray-900 p-2 select-none",
       className,
     )}
     {...props}
@@ -126,10 +153,26 @@ export const CardIconImage = ({
   alt = "",
   className,
   ...props
-}: ImageProps) => (
+}: CardIconImageProps) => (
   <Image
     alt={alt}
-    className={cx("size-8 brightness-0 invert", className)}
+    className={cx("brightness-0 invert", className)}
+    {...props}
+  />
+);
+
+export const CardIconLogo = ({
+  logo,
+  style = {},
+  ...props
+}: CardIconLogoProps) => (
+  <CardIconImage
+    style={
+      logo.height <= logo.width
+        ? { height: "auto", width: "100%", ...style }
+        : { height: "100%", width: "auto", ...style }
+    }
+    {...logoImageProps(logo)}
     {...props}
   />
 );

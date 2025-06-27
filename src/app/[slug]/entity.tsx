@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 
 import {
   Access,
-  ContentType,
   EntityPersonRelationship,
   Logo,
   LogoColorScheme,
@@ -19,10 +18,10 @@ import { Button, ButtonTruncate } from "@/satin/button";
 import {
   Card,
   CardGrid,
-  CardGridImage,
+  CardGridLogo,
   CardHeading,
   CardIcon,
-  CardIconImage,
+  CardIconLogo,
   CardParagraph,
   Cards,
 } from "@/satin/card";
@@ -40,7 +39,7 @@ import {
   IconHeroGrid,
   IconHeroHeading,
   IconHeroIcon,
-  IconHeroImage,
+  IconHeroIconLogo,
 } from "@/satin/hero/icon";
 import { Link } from "@/satin/link";
 import { Mdx } from "@/satin/mdx";
@@ -145,13 +144,7 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
           <IconHeroGrid>
             {logo && (
               <IconHeroIcon>
-                <IconHeroImage
-                  alt={entity.name}
-                  height={logo.height}
-                  src={paths.api.logo(logo.id)}
-                  unoptimized={logo.contentType === ContentType.Svg}
-                  width={logo.width}
-                />
+                <IconHeroIconLogo alt={entity.name} logo={logo} />
               </IconHeroIcon>
             )}
           </IconHeroGrid>
@@ -225,26 +218,10 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
                     <Card asChild clickable key={software.id}>
                       <Link href={paths.software(software.slug)}>
                         <CardGrid>
-                          {logo && (
-                            <CardGridImage
-                              alt={name}
-                              height={logo.height}
-                              src={paths.api.logo(logo.id)}
-                              unoptimized={logo.contentType === ContentType.Svg}
-                              width={logo.width}
-                            />
-                          )}
+                          {logo && <CardGridLogo logo={logo} />}
                         </CardGrid>
                         <CardIcon>
-                          {logo && (
-                            <CardIconImage
-                              alt={name}
-                              height={logo.height}
-                              src={paths.api.logo(logo.id)}
-                              unoptimized={logo.contentType === ContentType.Svg}
-                              width={logo.width}
-                            />
-                          )}
+                          {logo && <CardIconLogo logo={logo} />}
                         </CardIcon>
                         <CardHeading>{name}</CardHeading>
                         {software.caption && (

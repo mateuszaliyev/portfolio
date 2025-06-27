@@ -1,4 +1,4 @@
-import { ContentType, Logo, LogoColorScheme } from "@/constants";
+import { Logo, LogoColorScheme } from "@/constants";
 
 import { FadeInBlurToTop } from "@/satin/animation/fade-in";
 import { Button } from "@/satin/button";
@@ -12,8 +12,7 @@ import type {
   SoftwareGetReturnType,
 } from "@/server/api/software";
 
-import { createLogoPicker } from "@/utilities/logo";
-import { paths } from "@/utilities/url";
+import { createLogoPicker, logoImageProps } from "@/utilities/logo";
 
 type FeaturedTechnology = HomepageToolsProps["technologies"][number] & {
   logo: HomepageToolsProps["technologies"][number]["logos"][number]["logo"];
@@ -78,13 +77,8 @@ export const HomepageTools = ({
                     <Image
                       alt={technology.name}
                       className="h-7 w-auto"
-                      height={technology.logo.height}
                       priority
-                      src={paths.api.logo(technology.logo.id)}
-                      unoptimized={
-                        technology.logo.contentType === ContentType.Svg
-                      }
-                      width={technology.logo.width}
+                      {...logoImageProps(technology.logo)}
                     />
                   </div>
                 ))}
@@ -114,13 +108,8 @@ export const HomepageTools = ({
                   <Image
                     alt={technology.name}
                     className="h-5 w-auto"
-                    height={technology.logo.height}
                     priority
-                    src={paths.api.logo(technology.logo.id)}
-                    unoptimized={
-                      technology.logo.contentType === ContentType.Svg
-                    }
-                    width={technology.logo.width}
+                    {...logoImageProps(technology.logo)}
                   />
                 </MarqueeItem>
               ))}

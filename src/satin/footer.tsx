@@ -3,6 +3,10 @@ import { Container, type ContainerProps } from "@/satin/container";
 import { Image, type ImageProps } from "@/satin/image";
 import { Link, type LinkProps } from "@/satin/link";
 
+export interface FooterLogoProps
+  extends Omit<ImageProps, "alt">,
+    Partial<Pick<ImageProps, "alt">> {}
+
 export const Footer = ({
   className,
   ...props
@@ -28,7 +32,11 @@ export const FooterLink = ({ className, href, ...props }: LinkProps) => (
   />
 );
 
-export const FooterLogo = ({ alt = "", className, ...props }: ImageProps) => (
+export const FooterLogo = ({
+  alt = "",
+  className,
+  ...props
+}: FooterLogoProps) => (
   <Image
     alt={alt}
     className={cx("size-4.5 brightness-0 invert", className)}

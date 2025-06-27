@@ -16,6 +16,10 @@ import {
   type SectionProps,
 } from "@/satin/page";
 
+import type { Logo } from "@/server/database/schema";
+
+import { logoImageProps } from "@/utilities/logo";
+
 export { Section as IconHero } from "@/satin/page";
 
 export type IconHeroProps = SectionProps;
@@ -24,7 +28,13 @@ export type IconHeroContentProps = Omit<ContainerProps, "padding" | "size">;
 
 export type IconHeroGridProps = Omit<ContainerProps, "padding" | "size">;
 
-export type IconHeroImageProps = ImageProps;
+export type IconHeroIconImageProps = ImageProps;
+
+export interface IconHeroIconLogoProps
+  extends Omit<IconHeroIconImageProps, "src">,
+    Partial<Pick<IconHeroIconImageProps, "src">> {
+  logo: Logo;
+}
 
 export const IconHeroButtons = (props: SectionButtonsProps) => (
   <FadeInBlurToTop asChild delay={1100}>
@@ -115,7 +125,7 @@ export const IconHeroIcon = ({
   <FadeInScaleDown asChild delay={800}>
     <div
       className={cx(
-        "absolute top-1/2 left-1/2 flex size-30 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border border-gray-700 bg-gray-950",
+        "absolute top-1/2 left-1/2 flex size-30 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border border-gray-700 bg-gray-950 p-5",
         className,
       )}
       {...props}
@@ -123,16 +133,32 @@ export const IconHeroIcon = ({
   </FadeInScaleDown>
 );
 
-export const IconHeroImage = ({
+export const IconHeroIconImage = ({
   alt,
   className,
   priority = true,
   ...props
-}: IconHeroImageProps) => (
+}: IconHeroIconImageProps) => (
   <Image
     alt={alt}
-    className={cx("size-20 brightness-0 invert", className)}
+    className={cx("brightness-0 invert", className)}
     priority={priority}
+    {...props}
+  />
+);
+
+export const IconHeroIconLogo = ({
+  logo,
+  style = {},
+  ...props
+}: IconHeroIconLogoProps) => (
+  <IconHeroIconImage
+    style={
+      logo.height <= logo.width
+        ? { height: "auto", width: "100%", ...style }
+        : { height: "100%", width: "auto", ...style }
+    }
+    {...logoImageProps(logo)}
     {...props}
   />
 );

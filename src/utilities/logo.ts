@@ -1,6 +1,10 @@
-import { LogoColorScheme, Logo as LogoType } from "@/constants";
+import { ContentType, LogoColorScheme, Logo as LogoType } from "@/constants";
+
+import type { ImageProps } from "@/satin/image";
 
 import type { Logo } from "@/server/database/schema";
+
+import { paths } from "@/utilities/url";
 
 type LogoPickerOptions = {
   order?: { colorScheme?: LogoColorScheme[]; type?: LogoType[] };
@@ -62,3 +66,13 @@ export const createLogoPicker = (options?: LogoPickerOptions) => {
     return output;
   };
 };
+
+export const logoImageProps = (logo: Logo) =>
+  ({
+    height: logo.height,
+    src: paths.api.logo(logo.id),
+    unoptimized: logo.contentType === ContentType.Svg,
+    width: logo.width,
+  }) satisfies Required<
+    Pick<ImageProps, "height" | "src" | "unoptimized" | "width">
+  >;

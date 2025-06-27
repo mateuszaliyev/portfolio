@@ -1,10 +1,4 @@
-import {
-  ContentType,
-  LinkType,
-  Logo,
-  LogoColorScheme,
-  SoftwareType,
-} from "@/constants";
+import { LinkType, Logo, LogoColorScheme, SoftwareType } from "@/constants";
 
 import { environment } from "@/environment";
 
@@ -14,10 +8,10 @@ import { Button, ButtonTruncate } from "@/satin/button";
 import {
   Card,
   CardGrid,
-  CardGridImage,
+  CardGridLogo,
   CardHeading,
   CardIcon,
-  CardIconImage,
+  CardIconLogo,
   CardParagraph,
   Cards,
 } from "@/satin/card";
@@ -29,7 +23,7 @@ import {
   IconHeroGrid,
   IconHeroHeading,
   IconHeroIcon,
-  IconHeroImage,
+  IconHeroIconLogo,
 } from "@/satin/hero/icon";
 import { ArrowDiagonalIcon } from "@/satin/icons/arrow";
 import { ChevronIcon } from "@/satin/icons/chevron";
@@ -39,6 +33,7 @@ import {
   List,
   ListItem,
   ListItemIcon,
+  ListItemIconLogo,
   ListItemLink,
   ListItemTitle,
 } from "@/satin/list";
@@ -113,13 +108,7 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
           <IconHeroGrid>
             {logo && (
               <IconHeroIcon>
-                <IconHeroImage
-                  alt={name}
-                  height={logo.height}
-                  src={paths.api.logo(logo.id)}
-                  unoptimized={logo.contentType === ContentType.Svg}
-                  width={logo.width}
-                />
+                <IconHeroIconLogo alt={name} logo={logo} />
               </IconHeroIcon>
             )}
           </IconHeroGrid>
@@ -188,26 +177,10 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
                     <Card asChild clickable key={dependent.id}>
                       <Link href={paths.software(dependent.slug)}>
                         <CardGrid>
-                          {logo && (
-                            <CardGridImage
-                              alt={name}
-                              height={logo.height}
-                              src={paths.api.logo(logo.id)}
-                              unoptimized={logo.contentType === ContentType.Svg}
-                              width={logo.width}
-                            />
-                          )}
+                          {logo && <CardGridLogo logo={logo} />}
                         </CardGrid>
                         <CardIcon>
-                          {logo && (
-                            <CardIconImage
-                              alt={name}
-                              height={logo.height}
-                              src={paths.api.logo(logo.id)}
-                              unoptimized={logo.contentType === ContentType.Svg}
-                              width={logo.width}
-                            />
-                          )}
+                          {logo && <CardIconLogo logo={logo} />}
                         </CardIcon>
                         <CardHeading>{name}</CardHeading>
                         {dependent.caption && (
@@ -281,19 +254,9 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
                     return (
                       <ListItem key={dependency.id}>
                         <ListItemLink href={paths.software(dependency.slug)}>
-                          <div>
-                            {logo && (
-                              <ListItemIcon
-                                alt={name}
-                                height={logo.height}
-                                src={paths.api.logo(logo.id)}
-                                unoptimized={
-                                  logo.contentType === ContentType.Svg
-                                }
-                                width={logo.width}
-                              />
-                            )}
-                          </div>
+                          <ListItemIcon>
+                            {logo && <ListItemIconLogo logo={logo} />}
+                          </ListItemIcon>
                           <ListItemTitle>{name}</ListItemTitle>
                           <div className="flex items-center gap-1.5 text-white">
                             {/* <p>Learn more</p> */}

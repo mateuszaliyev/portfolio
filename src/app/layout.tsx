@@ -3,13 +3,7 @@ import "@/satin/style.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import {
-  Access,
-  ContentType,
-  Logo,
-  LogoColorScheme,
-  Platform,
-} from "@/constants";
+import { Access, Logo, LogoColorScheme, Platform } from "@/constants";
 
 import { Body } from "@/satin/body";
 import { Button } from "@/satin/button";
@@ -47,7 +41,7 @@ import {
 import { api } from "@/server/api";
 import { parseEmploymentsFromPersonEntities } from "@/server/utilities/employment";
 
-import { createLogoPicker } from "@/utilities/logo";
+import { createLogoPicker, logoImageProps } from "@/utilities/logo";
 import { index } from "@/utilities/metadata";
 import { getPlatformIfProfile, paths } from "@/utilities/url";
 
@@ -110,13 +104,8 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
                     <NavigationMenuItem>
                       <NavigationMenuTrigger asChild className="px-2">
                         <NavigationMenuLink href={paths.home()}>
-                          <NavigationMenuLogo
-                            alt="Homepage"
-                            height={logo.height}
-                            src={paths.api.logo(logo.id)}
-                            unoptimized={logo.contentType === ContentType.Svg}
-                            width={logo.width}
-                          />
+                          <NavigationMenuLogo {...logoImageProps(logo)} />
+                          <span className="sr-only">Homepage</span>
                         </NavigationMenuLink>
                       </NavigationMenuTrigger>
                     </NavigationMenuItem>
@@ -242,15 +231,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
                 className="flex items-center gap-2"
                 href={paths.home()}
               >
-                {logo && (
-                  <FooterLogo
-                    alt="Homepage"
-                    height={logo.height}
-                    src={paths.api.logo(logo.id)}
-                    unoptimized={logo.contentType === ContentType.Svg}
-                    width={logo.width}
-                  />
-                )}
+                {logo && <FooterLogo {...logoImageProps(logo)} />}
                 <span className="mt-0.5 whitespace-nowrap">
                   {person.name}
                   <span className="max-xs:sr-only">

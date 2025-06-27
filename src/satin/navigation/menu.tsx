@@ -39,6 +39,10 @@ export interface NavigationMenuLinkProps extends LinkProps, AsChild {
   active?: boolean;
 }
 
+export interface NavigationMenuLogoProps
+  extends Omit<ImageProps, "alt">,
+    Partial<Pick<ImageProps, "alt">> {}
+
 const navigationMenuDropdownContent = cva({
   base: "flex flex-col px-2 pt-8 pb-6",
   defaultVariants: { height: "auto" },
@@ -182,7 +186,7 @@ export const NavigationMenuLogo = ({
   alt = "",
   className,
   ...props
-}: ImageProps) => (
+}: NavigationMenuLogoProps) => (
   <Image
     alt={alt}
     className={cx("size-6 brightness-0 invert", className)}
