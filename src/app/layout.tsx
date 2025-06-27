@@ -214,7 +214,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
         {children}
         <PreFooter id="get-in-touch">
           <PreFooterContainer className="flex flex-col justify-between gap-8 sm:flex-row sm:items-center">
-            <h2 className="text-4xl leading-[1.1] font-medium tracking-tight text-balance text-white">
+            <h2 className="xs:text-4xl text-3xl leading-[1.1] font-medium tracking-tight text-balance text-white">
               Want to work together?
               <br />
               Get in touch.
