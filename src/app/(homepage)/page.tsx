@@ -330,7 +330,10 @@ const Homepage = async () => {
                     className="mt-6 inline-block"
                     color="secondary"
                   >
-                    <Link href={paths[entry.type](entry.slug)}>Learn more</Link>
+                    <Link href={paths[entry.type](entry.slug)}>
+                      Learn more
+                      <span className="sr-only"> about {entry.heading}</span>
+                    </Link>
                   </Button>
                 </div>
               ))}
