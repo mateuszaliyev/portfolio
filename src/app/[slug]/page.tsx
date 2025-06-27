@@ -50,9 +50,17 @@ export const generateMetadata = async ({
 
   if (!resource) notFound();
 
-  if (resource.type === "entity") return { title: resource.entity.name };
+  if (resource.type === "entity") {
+    return {
+      description: resource.entity.caption,
+      title: resource.entity.name,
+    };
+  }
 
-  return { title: formatSoftwareName(resource.software) };
+  return {
+    description: resource.software.caption,
+    title: formatSoftwareName(resource.software),
+  };
 };
 
 const SlugPage = async ({
