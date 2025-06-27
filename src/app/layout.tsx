@@ -59,11 +59,15 @@ const pickLogo = createLogoPicker({
 });
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const person = await api.people.getByEnvironmentVariable();
+  const [person, software] = await Promise.all([
+    api.people.getByEnvironmentVariable(),
+    api.software.getByEnvironmentVariable(),
+  ]);
 
-  if (!person) return notFound();
+  if (!person || !software) return notFound();
 
   return {
+    description: software.data.home.hero.heading,
     robots: index(false),
     title: { default: person.name, template: `%s | ${person.name}` },
   };
