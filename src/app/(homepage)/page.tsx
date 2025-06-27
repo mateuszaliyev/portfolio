@@ -158,7 +158,7 @@ const Homepage = async () => {
                 </Button>
               </FadeInBlurToTop>
               <FadeInBlurToTop asChild delay={1200}>
-                <Button asChild color="secondary" size="lg" variant="text">
+                <Button asChild size="lg" variant="text">
                   <Link href="#experience">
                     <ButtonTruncate className="bg-gradient-to-r from-gray-100 to-gray-500 bg-clip-text text-transparent">
                       <span className="sr-only sm:not-sr-only">View my </span>

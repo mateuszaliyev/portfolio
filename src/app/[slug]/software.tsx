@@ -139,15 +139,10 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
                   </Button>
                 )}
                 {software.entity && (
-                  <Button asChild color="secondary" size="lg">
+                  <Button asChild size="lg" variant="text">
                     <Link href={paths.software(software.entity.slug)}>
-                      <ButtonTruncate>
-                        <span className="xs:not-sr-only sr-only">
-                          More about
-                        </span>{" "}
-                        <span className="xs:normal-case capitalize">
-                          authors
-                        </span>
+                      <ButtonTruncate className="bg-gradient-to-r from-gray-100 to-gray-500 bg-clip-text text-transparent">
+                        {software.entity.name}
                       </ButtonTruncate>
                     </Link>
                   </Button>
