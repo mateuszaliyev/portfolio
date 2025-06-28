@@ -95,7 +95,7 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
     ),
   ].join(", ");
 
-  const from = entries[0]!.from;
+  const from = format(entries[0]!.from, "y");
 
   const links = entity.links
     ? Object.groupBy(entity.links, (link) => link.type)
@@ -135,7 +135,8 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
     )
     .sort((a, z) => formatSoftwareName(a).localeCompare(formatSoftwareName(z)));
 
-  const to = entries.at(-1)?.to;
+  const lastEntry = entries.at(-1);
+  const to = lastEntry?.to ? format(lastEntry.to, "y") : undefined;
 
   return (
     <Main padding="header">
@@ -180,8 +181,13 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
                 <DescriptionItem>
                   <DescriptionTerm>Duration</DescriptionTerm>
                   <DescriptionDetails>
-                    {format(from, "MMM, y")}&ndash;
-                    {to ? format(to, "MMM, y") : "present"}
+                    {from}
+                    {from !== to && (
+                      <>
+                        &ndash;
+                        {to ?? "present"}
+                      </>
+                    )}
                   </DescriptionDetails>
                 </DescriptionItem>
                 <DescriptionItem>
