@@ -55,6 +55,7 @@ import {
 
 import type { api } from "@/server/api";
 
+import { compareAccess } from "@/utilities/access";
 import { createLogoPicker } from "@/utilities/logo";
 import {
   formatLocationList,
@@ -102,7 +103,9 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
     ? Object.groupBy(entity.links, (link) => link.type)
     : undefined;
 
-  const link = links?.website?.[0] ?? links?.source?.[0];
+  const link =
+    links?.website?.toSorted((a, z) => compareAccess(a.access, z.access))[0] ??
+    links?.source?.toSorted((a, z) => compareAccess(a.access, z.access))[0];
 
   const locations = [
     ...new Set(

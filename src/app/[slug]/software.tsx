@@ -50,7 +50,7 @@ import {
 
 import type { api } from "@/server/api";
 
-import { isAccessible } from "@/utilities/access";
+import { compareAccess, isAccessible } from "@/utilities/access";
 import { createLogoPicker } from "@/utilities/logo";
 import { formatSoftwareName } from "@/utilities/string";
 import { paths } from "@/utilities/url";
@@ -76,7 +76,9 @@ export const SoftwarePage = ({ software }: SoftwarePageProps) => {
     ? Object.groupBy(software.links, (link) => link.type)
     : undefined;
 
-  const link = links?.website?.[0] ?? links?.source?.[0];
+  const link =
+    links?.website?.toSorted((a, z) => compareAccess(a.access, z.access))[0] ??
+    links?.source?.toSorted((a, z) => compareAccess(a.access, z.access))[0];
 
   const logo = pickLogo(software.logos.map(({ logo }) => logo));
 
