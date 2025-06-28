@@ -41,6 +41,7 @@ import {
   IconHeroIcon,
   IconHeroIconLogo,
 } from "@/satin/hero/icon";
+import { ArrowDiagonalIcon } from "@/satin/icons/arrow";
 import { Link } from "@/satin/link";
 import { Mdx } from "@/satin/mdx";
 import {
@@ -157,6 +158,7 @@ export const EntityPage = ({ entity }: EntityPageProps) => {
                 <Button asChild glow shine size="lg">
                   <Link href={link.url} target="_blank">
                     <ButtonTruncate>Visit site</ButtonTruncate>
+                    <ArrowDiagonalIcon />
                   </Link>
                 </Button>
               </IconHeroButtons>
